@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jämför Djurförsäkringar - DjurFörsäkring.se</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #0ea5e9;
+            text-decoration: none;
+        }
+        
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: #64748b;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        nav a:hover {
+            color: #0ea5e9;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            color: #64748b;
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+        }
+        
+        .form-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+        
+        .form-section {
+            margin-bottom: 2rem;
+        }
+        
+        .form-section h3 {
+            font-size: 1.25rem;
+            color: #0f172a;
+            margin-bottom: 1rem;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        label {
+            font-weight: 600;
+            color: #475569;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+        
+        select, input {
+            padding: 0.875rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        
+        select:focus, input:focus {
+            outline: none;
+            border-color: #0ea5e9;
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+        }
+        
+        .button {
+            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.125rem;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 3rem;
+        }
+        
+        .spinner {
+            border: 4px solid #f3f4f6;
+            border-top: 4px solid #0ea5e9;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .results {
+            display: none;
+        }
+        
+        .result-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+            transition: all 0.3s;
+            position: relative;
+            border: 2px solid transparent;
+        }
+        
+        .result-card:hover {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            transform: translateY(-4px);
+        }
+        
+        .result-card.best-price {
+            border-color: #10b981;
+            background: linear-gradient(to right, #ffffff, #f0fdf4);
+        }
+        
+        .best-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.875rem;
+            box-shadow: 0 4px 6px rgba(16, 185, 129, 0.3);
+        }
+        
+        .company-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .company-name {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #0f172a;
+        }
+        
+        .price {
+            text-align: right;
+        }
+        
+        .price-amount {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #0ea5e9;
+        }
+        
+        .price-period {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+        
+        .features {
+            display: grid;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            color: #475569;
+        }
+        
+        .feature:before {
+            content: "✓";
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 0.75rem;
+            font-size: 1.25rem;
+        }
+        
+        .cta-button {
+            display: block;
+            text-align: center;
+            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.2s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .disclaimer {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            font-size: 0.95rem;
+            color: #78350f;
+        }
+        
+        .view-toggle {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .view-btn {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid #e2e8f0;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        
+        .view-btn.active {
+            background: #0ea5e9;
+            color: white;
+            border-color: #0ea5e9;
+        }
+        
+        .comparison-table {
+            display: none;
+            overflow-x: auto;
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        th {
+            background: #f8fafc;
+            font-weight: 700;
+            color: #0f172a;
+        }
+        
+        td {
+            color: #475569;
+        }
+        
+        .table-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0ea5e9;
+        }
+            font-size: 0.95rem;
+            color: #78350f;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav {
+                gap: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .form-card {
+                padding: 1.5rem;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                🐾 Djurförsäkringen
+            </a>
+            <nav>
+                <a href="compare.html">Jämför nu</a>
+                <a href="about.html">Om oss</a>
+                <a href="contact.html">Kontakt</a>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="container">
+        <h1>Jämför Djurförsäkringar</h1>
+        <p class="subtitle">Fyll i uppgifterna nedan för att se de bästa försäkringarna för ditt husdjur</p>
+        
+        <div class="form-card">
+            <form id="compareForm">
+                <div class="form-section">
+                    <h3>Välj djurtyp</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="animalType">Djur *</label>
+                            <select id="animalType" required>
+                                <option value="">Välj djur</option>
+                                <option value="hund">Hund</option>
+                                <option value="katt">Katt</option>
+                                <option value="hast">Häst</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="birthDate">Födelsedatum *</label>
+                            <input type="date" id="birthDate" required max="2026-01-02">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3>Djurets information</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="gender">Kön *</label>
+                            <select id="gender" required>
+                                <option value="">Välj kön</option>
+                                <option value="hane">Hane</option>
+                                <option value="hona">Hona</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="breed">Ras *</label>
+                            <select id="breed" required>
+                                <option value="">Välj ras</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="neutered">Kastrerad/Steriliserad *</label>
+                            <select id="neutered" required>
+                                <option value="">Välj</option>
+                                <option value="ja">Ja</option>
+                                <option value="nej">Nej</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3>Försäkringsalternativ</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="deductible">Självrisk *</label>
+                            <select id="deductible" required>
+                                <option value="">Välj självrisk</option>
+                                <option value="1500">1 500 kr + 20%</option>
+                                <option value="2000">2 000 kr + 20%</option>
+                                <option value="2500">2 500 kr + 20%</option>
+                                <option value="3000">3 000 kr + 20%</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="coverage">Täckning *</label>
+                            <select id="coverage" required>
+                                <option value="">Välj täckning</option>
+                                <option value="basic">Grundskydd</option>
+                                <option value="standard">Standard</option>
+                                <option value="premium">Premium</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="submit" class="button">Jämför försäkringar →</button>
+            </form>
+        </div>
+        
+        <div class="loading">
+            <div class="spinner"></div>
+            <p>Söker bland försäkringar...</p>
+        </div>
+        
+        <div class="results" id="results"></div>
+        <div class="comparison-table" id="comparisonTable"></div>
+    </div>
+    
+    <script>
+        // Breed data for different animal types
+        const breedData = {
+            hund: [
+                "Labrador Retriever", "Golden Retriever", "Border Collie", "Schäfer", 
+                "Tax", "Springer Spaniel", "Cocker Spaniel", "Cavalier King Charles Spaniel",
+                "Bichon Havanais", "Staffordshire Bullterrier", "Flatcoated Retriever",
+                "Rhodesian Ridgeback", "Beagle", "Jack Russell Terrier", "Chihuahua",
+                "Mops", "Yorkshireterrier", "Blandras", "Annan ras"
+            ],
+            katt: [
+                "Huskatt", "Bondkatt", "Birma", "Ragdoll", "Maine Coon", "Siames",
+                "Perser", "Brittiskt Korthår", "Bengal", "Norsk Skogskatt", 
+                "Burmilla", "Devon Rex", "Sphinx", "Blandras", "Annan ras"
+            ],
+            hast: [
+                "Svensk Varmblod", "Islandshäst", "Shetlandsponny", "New Forest",
+                "Welsh", "Connemara", "Arabiskt Fullblod", "Engelskt Fullblod",
+                "Quarter Horse", "Paint Horse", "Appaloosa", "Haflinger",
+                "Kallblod", "Blandras", "Annan ras"
+            ]
+        };
+        
+        // Update breed dropdown when animal type changes
+        document.getElementById('animalType').addEventListener('change', function() {
+            const animalType = this.value;
+            const breedSelect = document.getElementById('breed');
+            breedSelect.innerHTML = '<option value="">Välj ras</option>';
+            
+            if (animalType && breedData[animalType]) {
+                breedData[animalType].forEach(breed => {
+                    const option = document.createElement('option');
+                    option.value = breed;
+                    option.textContent = breed;
+                    breedSelect.appendChild(option);
+                });
+            }
+        });
+        
+        const insuranceData = {
+            hund: [
+                {
+                    company: "Agria Djurförsäkring",
+                    price: 289,
+                    features: [
+                        "Veterinärvård upp till 30 000 kr/år",
+                        "Livförsäkring 15 000 kr",
+                        "Rehabilitering och fysioterapi",
+                        "Videosamtal med veterinär 24/7",
+                        "Dolda fel inkluderat"
+                    ]
+                },
+                {
+                    company: "Folksam Djurförsäkring",
+                    price: 265,
+                    features: [
+                        "Veterinärvård upp till 25 000 kr/år",
+                        "Livförsäkring 12 000 kr",
+                        "Rehabilitering",
+                        "Telefonsupport med veterinär",
+                        "Akutvård dygnet runt"
+                    ]
+                },
+                {
+                    company: "Sveland Djurförsäkring",
+                    price: 249,
+                    features: [
+                        "Veterinärvård upp till 20 000 kr/år",
+                        "Livförsäkring 10 000 kr",
+                        "Medicinkostnader",
+                        "Rådgivning",
+                        "Dolda fel upp till 2 år"
+                    ]
+                },
+                {
+                    company: "If Djurförsäkring",
+                    price: 299,
+                    features: [
+                        "Veterinärvård upp till 35 000 kr/år",
+                        "Livförsäkring 18 000 kr",
+                        "Rehabilitering och tandvård",
+                        "24/7 veterinärrådgivning",
+                        "Kostnader vid dolda fel"
+                    ]
+                }
+            ],
+            katt: [
+                {
+                    company: "Agria Djurförsäkring",
+                    price: 179,
+                    features: [
+                        "Veterinärvård upp till 25 000 kr/år",
+                        "Livförsäkring 12 000 kr",
+                        "Rehabilitering",
+                        "Videosamtal med veterinär",
+                        "Medicinkostnader"
+                    ]
+                },
+                {
+                    company: "Folksam Djurförsäkring",
+                    price: 159,
+                    features: [
+                        "Veterinärvård upp till 20 000 kr/år",
+                        "Livförsäkring 10 000 kr",
+                        "Akutvård",
+                        "Telefonsupport",
+                        "Kroniska sjukdomar"
+                    ]
+                },
+                {
+                    company: "Sveland Djurförsäkring",
+                    price: 149,
+                    features: [
+                        "Veterinärvård upp till 18 000 kr/år",
+                        "Livförsäkring 8 000 kr",
+                        "Medicin",
+                        "Rådgivning",
+                        "Dolda fel"
+                    ]
+                },
+                {
+                    company: "If Djurförsäkring",
+                    price: 189,
+                    features: [
+                        "Veterinärvård upp till 28 000 kr/år",
+                        "Livförsäkring 15 000 kr",
+                        "Tandvård",
+                        "24/7 rådgivning",
+                        "Rehabilitering"
+                    ]
+                }
+            ],
+            hast: [
+                {
+                    company: "Agria Hästförsäkring",
+                    price: 1850,
+                    features: [
+                        "Veterinärvård upp till 100 000 kr/år",
+                        "Livförsäkring upp till 150 000 kr",
+                        "Kirurgi och sjukhusvård",
+                        "Transport och räddningskostnader",
+                        "Personskadeansvar 10 miljoner kr"
+                    ]
+                },
+                {
+                    company: "Folksam Hästförsäkring",
+                    price: 1650,
+                    features: [
+                        "Veterinärvård upp till 80 000 kr/år",
+                        "Livförsäkring upp till 120 000 kr",
+                        "Sjukhusvård",
+                        "Räddningskostnader",
+                        "Personskadeansvar 5 miljoner kr"
+                    ]
+                },
+                {
+                    company: "Sveland Hästförsäkring",
+                    price: 1550,
+                    features: [
+                        "Veterinärvård upp till 70 000 kr/år",
+                        "Livförsäkring upp till 100 000 kr",
+                        "Kirurgi",
+                        "Transport",
+                        "Ansvarsskydd 5 miljoner kr"
+                    ]
+                },
+                {
+                    company: "If Hästförsäkring",
+                    price: 1950,
+                    features: [
+                        "Veterinärvård upp till 120 000 kr/år",
+                        "Livförsäkring upp till 200 000 kr",
+                        "Omfattande kirurgi och rehab",
+                        "Transport och räddning",
+                        "Personskadeansvar 15 miljoner kr"
+                    ]
+                }
+            ]
+        };
+        
+        document.getElementById('compareForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const animalType = document.getElementById('animalType').value;
+            const birthDate = document.getElementById('birthDate').value;
+            const coverage = document.getElementById('coverage').value;
+            const breed = document.getElementById('breed').value;
+            const neutered = document.getElementById('neutered').value;
+            
+            if (!animalType || !birthDate || !coverage || !breed || !neutered) {
+                alert('Vänligen fyll i alla obligatoriska fält');
+                return;
+            }
+            
+            // Calculate age from birth date
+            const birth = new Date(birthDate);
+            const today = new Date();
+            const ageInYears = (today - birth) / (1000 * 60 * 60 * 24 * 365.25);
+            
+            // Show loading
+            document.querySelector('.form-card').style.display = 'none';
+            document.querySelector('.loading').style.display = 'block';
+            
+            // Simulate API call
+            setTimeout(function() {
+                displayResults(animalType, ageInYears, coverage, neutered);
+            }, 1500);
+        });
+        
+        function displayResults(animalType, ageInYears, coverage, neutered) {
+            const insurances = insuranceData[animalType] || [];
+            
+            // Adjust prices based on age and coverage
+            let adjustedInsurances = insurances.map(ins => {
+                let price = ins.price;
+                
+                // Age adjustment
+                if (ageInYears < 2) price *= 0.9;  // Young animals cheaper
+                else if (ageInYears >= 5 && ageInYears < 8) price *= 1.3;
+                else if (ageInYears >= 8) price *= 1.8;
+                
+                // Neutered discount
+                if (neutered === 'ja') price *= 0.95;
+                
+                // Coverage adjustment
+                if (coverage === 'standard') price *= 1.2;
+                if (coverage === 'premium') price *= 1.5;
+                
+                return {
+                    ...ins,
+                    price: Math.round(price)
+                };
+            });
+            
+            // Sort by price
+            adjustedInsurances.sort((a, b) => a.price - b.price);
+            
+            const resultsDiv = document.getElementById('results');
+            let html = '';
+            
+            adjustedInsurances.forEach((insurance, index) => {
+                const isBest = index === 0;
+                
+                // Generate affiliate links (placeholder URLs - replace with real affiliate links later)
+                const affiliateLinks = {
+                    'Agria Djurförsäkring': 'https://www.agria.se/djurforsakring?ref=djurforsakring',
+                    'Folksam Djurförsäkring': 'https://www.folksam.se/forsakringar/djurforsakring?ref=djurforsakring',
+                    'Sveland Djurförsäkring': 'https://www.sveland.se/djur?ref=djurforsakring',
+                    'If Djurförsäkring': 'https://www.if.se/privat/forsakring/djurforsakring?ref=djurforsakring',
+                    'Agria Hästförsäkring': 'https://www.agria.se/hastforsakring?ref=djurforsakring',
+                    'Folksam Hästförsäkring': 'https://www.folksam.se/forsakringar/hastforsakring?ref=djurforsakring',
+                    'Sveland Hästförsäkring': 'https://www.sveland.se/hast?ref=djurforsakring',
+                    'If Hästförsäkring': 'https://www.if.se/privat/forsakring/hastforsakring?ref=djurforsakring'
+                };
+                
+                const affiliateUrl = affiliateLinks[insurance.company] || '#';
+                
+                html += `
+                    <div class="result-card ${isBest ? 'best-price' : ''}">
+                        ${isBest ? '<div class="best-badge">BÄST PRIS 💰</div>' : ''}
+                        <div class="company-header">
+                            <div class="company-name">${insurance.company}</div>
+                            <div class="price">
+                                <div class="price-amount">${insurance.price} kr</div>
+                                <div class="price-period">per månad</div>
+                            </div>
+                        </div>
+                        <div class="features">
+                            ${insurance.features.map(f => `<div class="feature">${f}</div>`).join('')}
+                        </div>
+                        <a href="${affiliateUrl}" target="_blank" rel="noopener" class="cta-button">Teckna försäkring →</a>
+                    </div>
+                `;
+            });
+            
+            html = `
+                <div class="view-toggle">
+                    <button class="view-btn active" onclick="showCardView()">📋 Kortvy</button>
+                    <button class="view-btn" onclick="showTableView()">📊 Tabellvy</button>
+                </div>
+            ` + html;
+            
+            html += `
+                <div class="disclaimer">
+                    <strong>⚠️ Observera:</strong> Priserna är vägledande och kan variera beroende på djurets exakta ålder, ras, hälsotillstånd och var du bor. Kontakta försäkringsbolaget för ett exakt pris. Jämförelsen är kostnadsfri och du får inga bindningar.
+                </div>
+            `;
+            
+            resultsDiv.innerHTML = html;
+            
+            // Create table view
+            createTableView(adjustedInsurances);
+            
+            // Hide loading, show results
+            document.querySelector('.loading').style.display = 'none';
+            resultsDiv.style.display = 'block';
+            
+            // Scroll to results
+            resultsDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function createTableView(insurances) {
+            const tableDiv = document.getElementById('comparisonTable');
+            let tableHTML = `
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Försäkringsbolag</th>
+                            <th>Pris/månad</th>
+                            <th>Veterinärvård</th>
+                            <th>Livförsäkring</th>
+                            <th>Övrigt</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+            
+            insurances.forEach((ins, index) => {
+                const affiliateLinks = {
+                    'Agria Djurförsäkring': 'https://www.agria.se/djurforsakring?ref=djurforsakring',
+                    'Folksam Djurförsäkring': 'https://www.folksam.se/forsakringar/djurforsakring?ref=djurforsakring',
+                    'Sveland Djurförsäkring': 'https://www.sveland.se/djur?ref=djurforsakring',
+                    'If Djurförsäkring': 'https://www.if.se/privat/forsakring/djurforsakring?ref=djurforsakring',
+                    'Agria Hästförsäkring': 'https://www.agria.se/hastforsakring?ref=djurforsakring',
+                    'Folksam Hästförsäkring': 'https://www.folksam.se/forsakringar/hastforsakring?ref=djurforsakring',
+                    'Sveland Hästförsäkring': 'https://www.sveland.se/hast?ref=djurforsakring',
+                    'If Hästförsäkring': 'https://www.if.se/privat/forsakring/hastforsakring?ref=djurforsakring'
+                };
+                
+                const affiliateUrl = affiliateLinks[ins.company] || '#';
+                const isBest = index === 0;
+                
+                tableHTML += `
+                    <tr style="${isBest ? 'background: #f0fdf4;' : ''}">
+                        <td><strong>${ins.company}</strong> ${isBest ? '⭐' : ''}</td>
+                        <td><span class="table-price">${ins.price} kr</span></td>
+                        <td>${ins.features[0] || '-'}</td>
+                        <td>${ins.features[1] || '-'}</td>
+                        <td>${ins.features.slice(2).join('<br>') || '-'}</td>
+                        <td><a href="${affiliateUrl}" target="_blank" rel="noopener" class="cta-button" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Teckna →</a></td>
+                    </tr>
+                `;
+            });
+            
+            tableHTML += `
+                    </tbody>
+                </table>
+            `;
+            
+            tableDiv.innerHTML = tableHTML;
+        }
+        
+        function showCardView() {
+            document.getElementById('results').style.display = 'block';
+            document.getElementById('comparisonTable').style.display = 'none';
+            document.querySelectorAll('.view-btn')[0].classList.add('active');
+            document.querySelectorAll('.view-btn')[1].classList.remove('active');
+        }
+        
+        function showTableView() {
+            document.getElementById('results').style.display = 'none';
+            document.getElementById('comparisonTable').style.display = 'block';
+            document.querySelectorAll('.view-btn')[0].classList.remove('active');
+            document.querySelectorAll('.view-btn')[1].classList.add('active');
+        }
+    </script>
+</body>
+</html>

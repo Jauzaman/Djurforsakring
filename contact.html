@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - DjurFörsäkring</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0ea5e9;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: #64748b;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        nav a:hover {
+            color: #0ea5e9;
+        }
+        
+        .container {
+            max-width: 700px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+        
+        .content-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 1rem;
+        }
+        
+        .intro {
+            color: #64748b;
+            font-size: 1.125rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .success-message {
+            background: linear-gradient(to right, #ecfdf5, #d1fae5);
+            border-left: 4px solid #10b981;
+            color: #065f46;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            display: none;
+            font-weight: 600;
+        }
+        
+        .success-message.show {
+            display: block;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #334155;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.2s;
+        }
+        
+        input:hover, textarea:hover {
+            border-color: #cbd5e1;
+        }
+        
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #0ea5e9;
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+        }
+        
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        button {
+            width: 100%;
+            background: #0ea5e9;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.125rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 4px 6px rgba(14, 165, 233, 0.2);
+        }
+        
+        button:hover {
+            background: #0284c7;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 12px rgba(14, 165, 233, 0.3);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav {
+                gap: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .content-card {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                🐾 Djurförsäkringen
+            </a>
+            <nav>
+                <a href="compare.html">Jämför försäkringar</a>
+                <a href="about.html">Om oss</a>
+                <a href="contact.html">Kontakt</a>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="content-card">
+            <h1>Kontakta oss</h1>
+            <p class="intro">Har du frågor eller funderingar? Fyll i formuläret nedan så återkommer vi till dig så snart som möjligt.</p>
+            
+            <div class="success-message" id="successMessage">
+                ✓ Tack för ditt meddelande! Vi återkommer inom kort.
+            </div>
+            
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Namn *</label>
+                    <input type="text" id="name" name="name" required placeholder="Ditt namn">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">E-post *</label>
+                    <input type="email" id="email" name="email" required placeholder="din@email.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Ämne</label>
+                    <input type="text" id="subject" name="subject" placeholder="Vad gäller ditt meddelande?">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Meddelande *</label>
+                    <textarea id="message" name="message" required placeholder="Skriv ditt meddelande här..."></textarea>
+                </div>
+                
+                <button type="submit">Skicka meddelande</button>
+            </form>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2026 DjurFörsäkring. Alla rättigheter förbehållna.</p>
+    </footer>
+    
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            const successMsg = document.getElementById('successMessage');
+            successMsg.classList.add('show');
+            
+            // Clear form
+            this.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(function() {
+                successMsg.classList.remove('show');
+            }, 5000);
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
