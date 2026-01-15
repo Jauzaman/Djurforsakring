@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5NELM59PSY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-5NELM59PSY');
+    </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jämför Djurförsäkringar - DjurFörsäkring.se</title>
@@ -720,16 +729,16 @@
             adjustedInsurances.forEach((insurance, index) => {
                 const isBest = index === 0;
                 
-                // Generate affiliate links (placeholder URLs - replace with real affiliate links later)
+                // Affiliate tracking links from Adtraction
                 const affiliateLinks = {
-                    'Agria Djurförsäkring': 'https://www.agria.se/djurforsakring?ref=djurforsakring',
-                    'Folksam Djurförsäkring': 'https://www.folksam.se/forsakringar/djurforsakring?ref=djurforsakring',
-                    'Sveland Djurförsäkring': 'https://www.sveland.se/djur?ref=djurforsakring',
-                    'If Djurförsäkring': 'https://www.if.se/privat/forsakring/djurforsakring?ref=djurforsakring',
-                    'Agria Hästförsäkring': 'https://www.agria.se/hastforsakring?ref=djurforsakring',
-                    'Folksam Hästförsäkring': 'https://www.folksam.se/forsakringar/hastforsakring?ref=djurforsakring',
-                    'Sveland Hästförsäkring': 'https://www.sveland.se/hast?ref=djurforsakring',
-                    'If Hästförsäkring': 'https://www.if.se/privat/forsakring/hastforsakring?ref=djurforsakring'
+                    'Agria Djurförsäkring': 'https://go.adt256.com/t/t?a=1616939388&as=2037458669&t=2&tk=1',
+                    'Folksam Djurförsäkring': 'https://on.petson.se/t/t?a=1911536957&as=2037458669&t=2&tk=1',
+                    'Sveland Djurförsäkring': 'https://in.sveland.se/t/t?a=1962700516&as=2037458669&t=2&tk=1',
+                    'If Djurförsäkring': 'https://ion.lassie.co/t/t?a=1644319682&as=2037458669&t=2&tk=1',
+                    'Agria Hästförsäkring': 'https://go.adt256.com/t/t?a=1616939388&as=2037458669&t=2&tk=1',
+                    'Folksam Hästförsäkring': 'https://on.petson.se/t/t?a=1911536957&as=2037458669&t=2&tk=1',
+                    'Sveland Hästförsäkring': 'https://in.sveland.se/t/t?a=1962700516&as=2037458669&t=2&tk=1',
+                    'If Hästförsäkring': 'https://ion.lassie.co/t/t?a=1644319682&as=2037458669&t=2&tk=1'
                 };
                 
                 const affiliateUrl = affiliateLinks[insurance.company] || '#';
