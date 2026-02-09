@@ -93,8 +93,7 @@
         .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 5rem 2rem;
-            text-align: center;
+            padding: 4rem 2rem;
             position: relative;
             overflow: hidden;
         }
@@ -111,22 +110,83 @@
             pointer-events: none;
         }
         
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+        }
+        
+        .hero-text {
+            text-align: left;
+        }
+        
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             font-weight: 900;
             margin-bottom: 1.5rem;
             position: relative;
             letter-spacing: -1px;
+            line-height: 1.1;
         }
         
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             margin-bottom: 2.5rem;
             opacity: 0.95;
             position: relative;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            line-height: 1.7;
+        }
+        
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        .hero-visual .visual-circle {
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            font-size: 6rem;
+            position: relative;
+        }
+        
+        .hero-visual .mini-card {
+            position: absolute;
+            background: white;
+            color: #667eea;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .hero-visual .mini-card:nth-child(2) {
+            top: 10%;
+            right: 0;
+        }
+        
+        .hero-visual .mini-card:nth-child(3) {
+            bottom: 15%;
+            left: -10%;
+        }
+        
+        .hero-visual .mini-card:nth-child(4) {
+            top: 50%;
+            right: -15%;
         }
         
         .cta-button {
@@ -148,45 +208,139 @@
         }
         
         .trust-bar {
-            background: #f8fafc;
-            padding: 3rem 2rem;
+            background: white;
+            padding: 4rem 2rem;
             border-top: 1px solid #e5e7eb;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.02);
         }
         
         .trust-content {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
-            text-align: center;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
         }
         
         .trust-item {
             display: flex;
             flex-direction: column;
             align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .trust-item:hover {
+            transform: translateY(-5px);
+            border-color: #667eea;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
         }
         
         .trust-icon {
-            font-size: 3rem;
-            margin-bottom: 0.75rem;
-            filter: grayscale(0.2);
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            filter: grayscale(0);
         }
         
         .trust-number {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 800;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            margin-bottom: 0.75rem;
         }
         
         .trust-label {
             color: #6b7280;
-            font-size: 0.95rem;
+            font-size: 1.05rem;
             font-weight: 500;
+            line-height: 1.6;
+        }
+        
+        .how-it-works {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+            padding: 5rem 2rem;
+            margin-top: 0;
+        }
+        
+        .how-it-works-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .how-it-works h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+        
+        .how-it-works .subtitle {
+            text-align: center;
+            color: #6b7280;
+            font-size: 1.15rem;
+            margin-bottom: 4rem;
+        }
+        
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            position: relative;
+        }
+        
+        .step-card {
+            background: white;
+            padding: 3rem 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            position: relative;
+            transition: all 0.3s;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.2);
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 900;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .step-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .step-card h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+        
+        .step-card p {
+            color: #6b7280;
+            line-height: 1.7;
+            font-size: 1.05rem;
         }
         
         .section {
@@ -212,7 +366,7 @@
         
         .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 2.5rem;
             margin-top: 3rem;
         }
@@ -224,6 +378,13 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             transition: all 0.3s;
             border: 1px solid #f3f4f6;
+        }
+        
+        .info-card.full-width {
+            grid-column: 1 / -1;
+            max-width: 700px;
+            margin: 0 auto;
+            width: 100%;
         }
         
         .info-card:hover {
@@ -283,7 +444,7 @@
         }
         
         .faq-content {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
         }
         
@@ -295,11 +456,16 @@
             color: #1f2937;
         }
         
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        
         .faq-item {
             background: white;
             border-radius: 12px;
             padding: 2rem;
-            margin-bottom: 1.5rem;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
             transition: all 0.3s;
         }
@@ -362,11 +528,44 @@
                 gap: 1rem;
             }
             
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .hero-text {
+                text-align: center;
+            }
+            
             .hero h1 {
                 font-size: 2rem;
             }
             
+            .hero-visual .visual-circle {
+                width: 250px;
+                height: 250px;
+                font-size: 4rem;
+            }
+            
+            .hero-visual .mini-card {
+                font-size: 0.8rem;
+                padding: 0.75rem 1rem;
+            }
+            
             .trust-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .steps-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .faq-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -387,32 +586,69 @@
     </header>
     
     <div class="hero">
-        <h1>Jämför djurförsäkringar från flera bolag</h1>
-        <p>En oberoende jämförelsetjänst som hjälper dig hitta försäkring för hund, katt eller häst. Vi förmedlar kontakt med försäkringsbolag – du avgör själv.</p>
-        <a href="compare.html" class="cta-button">Jämför villkor och priser</a>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Jämför djurförsäkringar från flera bolag</h1>
+                <p>En oberoende jämförelsetjänst som hjälper dig hitta försäkring för hund, katt eller häst. Vi förmedlar kontakt med försäkringsbolag – du avgör själv.</p>
+                <a href="compare.html" class="cta-button">Jämför villkor och priser</a>
+            </div>
+            <div class="hero-visual">
+                <div class="visual-circle">
+                    🐾
+                </div>
+                <div class="mini-card">🐕 Hund</div>
+                <div class="mini-card">🐈 Katt</div>
+                <div class="mini-card">🐴 Häst</div>
+            </div>
+        </div>
     </div>
     
     <div class="trust-bar">
         <div class="trust-content">
             <div class="trust-item">
-                <div class="trust-icon">✓</div>
-                <div class="trust-number">Oberoende</div>
-                <div class="trust-label">Jämförelsetjänst</div>
-            </div>
-            <div class="trust-item">
-                <div class="trust-icon">⚡</div>
-                <div class="trust-number">Flera bolag</div>
-                <div class="trust-label">På ett ställe</div>
+                <div class="trust-icon">🔍</div>
+                <div class="trust-number">Enkel jämförelse</div>
+                <div class="trust-label">Jämför villkor och priser från flera försäkringsbolag på ett ställe</div>
             </div>
             <div class="trust-item">
                 <div class="trust-icon">💰</div>
-                <div class="trust-number">Förenklad</div>
-                <div class="trust-label">Översikt</div>
+                <div class="trust-number">Spara pengar</div>
+                <div class="trust-label">Hitta bästa försäkringen för ditt djur och sänk dina kostnader</div>
             </div>
             <div class="trust-item">
-                <div class="trust-icon">👥</div>
-                <div class="trust-number">Du väljer</div>
-                <div class="trust-label">Själv bolag</div>
+                <div class="trust-icon">✓</div>
+                <div class="trust-number">Fullständig frihet</div>
+                <div class="trust-label">Du bestämmer själv vilket bolag du vill kontakta och teckna hos</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="how-it-works">
+        <div class="how-it-works-content">
+            <h2>Så här fungerar det</h2>
+            <p class="subtitle">Hitta rätt försäkring för ditt djur på tre enkla steg</p>
+            
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">📝</div>
+                    <h3>Ange uppgifter</h3>
+                    <p>Välj djurtyp och fyll i några enkla uppgifter om ditt husdjur – ålder, ras och önskad täckning.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">🔍</div>
+                    <h3>Jämför alternativ</h3>
+                    <p>Få en översikt av försäkringar från flera bolag med priser och villkor presenterade sida vid sida.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">✅</div>
+                    <h3>Välj och teckna</h3>
+                    <p>Bestäm själv vilket bolag som passar dig bäst och gå vidare för att teckna försäkringen direkt hos dem.</p>
+                </div>
             </div>
         </div>
     </div>
@@ -452,7 +688,7 @@
                 </div>
             </div>
             
-            <div class="info-card">
+            <div class="info-card full-width">
                 <h3>🐴 Försäkring för häst</h3>
                 <ul>
                     <li>Sjuk- och olycksfallsförsäkring</li>
@@ -477,44 +713,46 @@
         <div class="faq-content">
             <h2>Vanliga frågor om djurförsäkring</h2>
             
-            <div class="faq-item">
-                <div class="faq-question">Är det lag på att ha djurförsäkring?</div>
-                <div class="faq-answer">Nej, i Sverige finns inget lagkrav på att försäkra sitt husdjur. Däremot rekommenderas det starkt eftersom veterinärvård kan bli mycket kostsam. En försäkring ger ekonomisk trygghet när något oväntat händer.</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Vad ingår i en grundförsäkring?</div>
-                <div class="faq-answer">En grundförsäkring innehåller normalt veterinärvård vid sjukdom och olycksfall samt livförsäkring. Vissa bolag inkluderar även rehabilitering, tandvård och veterinärrådgivning. Exakt vad som ingår varierar mellan bolagen, så läs alltid igenom försäkringsvillkoren noggrant innan du tecknar.</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Hur stor skillnad kan det vara mellan bolagen?</div>
-                <div class="faq-answer">Priset för samma djur och täckning kan variera med flera tusen kronor per år mellan olika försäkringsbolag. Även villkoren skiljer sig åt – exempelvis vad som räknas som karenstid, hur självrisk beräknas och vilka undantag som gäller. Därför är det värt att jämföra.</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">När bör man teckna försäkring?</div>
-                <div class="faq-answer">Ju tidigare desto bättre. Försäkringen täcker inte sjukdomar eller skador som uppstod innan försäkringen tecknades. De flesta bolag kräver att djuret är friskt när försäkringen träder i kraft. Vanligtvis går det att försäkra djur från 6–8 veckors ålder.</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Vad är självrisk och hur fungerar den?</div>
-                <div class="faq-answer">Självrisken är den del av kostnaden du själv betalar vid varje veterinärbesök. Den kan vara fast (t.ex. 1500 kr) eller rörlig (t.ex. 20 % av kostnaden). Ibland finns en kombinerad självrisk. En högre självrisk ger lägre månadspremie, men innebär högre kostnad vid vård.</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Kan man byta försäkring?</div>
-                <div class="faq-answer">Ja, du kan byta försäkring. Den nya försäkringen träder dock oftast i kraft först vid din nuvarande försäkrings förnyelsedatum. Se till att teckna den nya försäkringen innan du säger upp den gamla, så att djuret alltid har ett gällande skydd.</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Vilka djur och raser kan försäkras?</div>
-                <div class="faq-answer">De flesta hundar, katter och hästar kan försäkras. Vissa raser med känd ökad sjukdomsrisk kan ha högre premier eller begränsningar i täckning. Äldre djur kan också möta åldersgränser hos vissa bolag. Kontrollera alltid hos respektive försäkringsbolag vilka villkor som gäller för just ditt djur.</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Hur kontaktar jag er?</div>
-                <div class="faq-answer">Du når oss via vårt <a href="contact.html" style="color: #667eea; text-decoration: underline;">kontaktformulär</a> eller på e-post info@djurspar.se. Vi svarar normalt inom 1–2 arbetsdagar.</div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">Är det lag på att ha djurförsäkring?</div>
+                    <div class="faq-answer">Nej, i Sverige finns inget lagkrav på att försäkra sitt husdjur. Däremot rekommenderas det starkt eftersom veterinärvård kan bli mycket kostsam. En försäkring ger ekonomisk trygghet när något oväntat händer.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Vad ingår i en grundförsäkring?</div>
+                    <div class="faq-answer">En grundförsäkring innehåller normalt veterinärvård vid sjukdom och olycksfall samt livförsäkring. Vissa bolag inkluderar även rehabilitering, tandvård och veterinärrådgivning. Exakt vad som ingår varierar mellan bolagen, så läs alltid igenom försäkringsvillkoren noggrant innan du tecknar.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Hur stor skillnad kan det vara mellan bolagen?</div>
+                    <div class="faq-answer">Priset för samma djur och täckning kan variera med flera tusen kronor per år mellan olika försäkringsbolag. Även villkoren skiljer sig åt – exempelvis vad som räknas som karenstid, hur självrisk beräknas och vilka undantag som gäller. Därför är det värt att jämföra.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">När bör man teckna försäkring?</div>
+                    <div class="faq-answer">Ju tidigare desto bättre. Försäkringen täcker inte sjukdomar eller skador som uppstod innan försäkringen tecknades. De flesta bolag kräver att djuret är friskt när försäkringen träder i kraft. Vanligtvis går det att försäkra djur från 6–8 veckors ålder.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Vad är självrisk och hur fungerar den?</div>
+                    <div class="faq-answer">Självrisken är den del av kostnaden du själv betalar vid varje veterinärbesök. Den kan vara fast (t.ex. 1500 kr) eller rörlig (t.ex. 20 % av kostnaden). Ibland finns en kombinerad självrisk. En högre självrisk ger lägre månadspremie, men innebär högre kostnad vid vård.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Kan man byta försäkring?</div>
+                    <div class="faq-answer">Ja, du kan byta försäkring. Den nya försäkringen träder dock oftast i kraft först vid din nuvarande försäkrings förnyelsedatum. Se till att teckna den nya försäkringen innan du säger upp den gamla, så att djuret alltid har ett gällande skydd.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Vilka djur och raser kan försäkras?</div>
+                    <div class="faq-answer">De flesta hundar, katter och hästar kan försäkras. Vissa raser med känd ökad sjukdomsrisk kan ha högre premier eller begränsningar i täckning. Äldre djur kan också möta åldersgränser hos vissa bolag. Kontrollera alltid hos respektive försäkringsbolag vilka villkor som gäller för just ditt djur.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Hur kontaktar jag er?</div>
+                    <div class="faq-answer">Du når oss via vårt <a href="contact.html" style="color: #667eea; text-decoration: underline;">kontaktformulär</a> eller på e-post info@djurspar.se. Vi svarar normalt inom 1–2 arbetsdagar.</div>
+                </div>
             </div>
         </div>
     </div>
