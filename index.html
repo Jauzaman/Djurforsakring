@@ -23,21 +23,33 @@
             padding: 0;
         }
         
+        :root {
+            --primary-blue: #0066CC;
+            --primary-green: #00A86B;
+            --dark-blue: #003D82;
+            --light-blue: #E6F2FF;
+            --neutral-gray: #F5F7FA;
+            --text-dark: #1A1A1A;
+            --text-gray: #4A5568;
+            --border-light: #E2E8F0;
+        }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: #fafafa;
-            color: #2c3e50;
-            line-height: 1.7;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: white;
+            color: var(--text-dark);
+            line-height: 1.6;
+            font-size: 16px;
         }
         
         header {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            padding: 1.2rem 0;
+            background: white;
+            border-bottom: 1px solid var(--border-light);
+            padding: 1.25rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
         }
         
         .header-content {
@@ -51,28 +63,28 @@
         
         .logo {
             font-size: 1.5rem;
-            font-weight: 800;
-            color: #2563eb;
+            font-weight: 700;
+            color: var(--primary-blue);
             text-decoration: none;
-            letter-spacing: -0.5px;
+            letter-spacing: -0.3px;
         }
         
         nav {
             display: flex;
-            gap: 2.5rem;
+            gap: 2rem;
         }
         
         nav a {
-            color: #64748b;
+            color: var(--text-gray);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
             font-size: 0.95rem;
-            transition: all 0.2s;
+            transition: color 0.2s;
             position: relative;
         }
         
         nav a:hover {
-            color: #2563eb;
+            color: var(--primary-blue);
         }
         
         nav a::after {
@@ -82,7 +94,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: #2563eb;
+            background: var(--primary-blue);
             transition: width 0.3s;
         }
         
@@ -91,54 +103,51 @@
         }
         
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #E6F2FF 0%, #F0F9FF 100%);
+            padding: 5rem 2rem;
             position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>') repeat;
-            opacity: 0.3;
-            pointer-events: none;
         }
         
         .hero-content {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.2fr 1fr;
             gap: 4rem;
             align-items: center;
-            position: relative;
         }
         
         .hero-text {
             text-align: left;
         }
         
-        .hero h1 {
-            font-size: 3.2rem;
-            font-weight: 900;
+        .hero-label {
+            display: inline-block;
+            background: white;
+            color: var(--primary-blue);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
             margin-bottom: 1.5rem;
-            position: relative;
-            letter-spacing: -1px;
-            line-height: 1.1;
+            border: 1px solid var(--border-light);
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            color: var(--text-dark);
+            letter-spacing: -0.5px;
+            line-height: 1.15;
         }
         
         .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.95;
-            position: relative;
-            line-height: 1.7;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--text-gray);
+            line-height: 1.6;
+            max-width: 550px;
         }
         
         .hero-visual {
@@ -148,125 +157,123 @@
             position: relative;
         }
         
-        .hero-visual .visual-circle {
-            width: 400px;
-            height: 400px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            backdrop-filter: blur(10px);
-            border: 3px solid rgba(255, 255, 255, 0.2);
-            font-size: 6rem;
-            position: relative;
+        .hero-visual img {
+            max-width: 100%;
+            border-radius: 16px;
         }
         
-        .hero-visual .mini-card {
-            position: absolute;
-            background: white;
-            color: #667eea;
-            padding: 1rem 1.5rem;
-            border-radius: 12px;
-            font-size: 0.9rem;
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2.5rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid var(--border-light);
+        }
+        
+        .hero-stat {
+            text-align: left;
+        }
+        
+        .hero-stat-number {
+            font-size: 2rem;
             font-weight: 700;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            color: var(--primary-blue);
+            display: block;
+            margin-bottom: 0.25rem;
         }
         
-        .hero-visual .mini-card:nth-child(2) {
-            top: 10%;
-            right: 0;
-        }
-        
-        .hero-visual .mini-card:nth-child(3) {
-            bottom: 15%;
-            left: -10%;
-        }
-        
-        .hero-visual .mini-card:nth-child(4) {
-            top: 50%;
-            right: -15%;
+        .hero-stat-label {
+            font-size: 0.9rem;
+            color: var(--text-gray);
         }
         
         .cta-button {
             display: inline-block;
-            background: white;
-            color: #667eea;
-            padding: 1.1rem 3rem;
-            border-radius: 50px;
+            background: var(--primary-blue);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 1.125rem;
+            font-weight: 600;
+            font-size: 1rem;
             transition: all 0.2s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0,102,204,0.2);
         }
         
         .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+            background: var(--dark-blue);
+            box-shadow: 0 4px 8px rgba(0,102,204,0.3);
+            transform: translateY(-1px);
+        }
+        
+        .cta-button-secondary {
+            display: inline-block;
+            background: white;
+            color: var(--primary-blue);
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.2s;
+            border: 2px solid var(--primary-blue);
+            margin-left: 1rem;
+        }
+        
+        .cta-button-secondary:hover {
+            background: var(--light-blue);
         }
         
         .trust-bar {
             background: white;
-            padding: 4rem 2rem;
-            border-top: 1px solid #e5e7eb;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.02);
+            padding: 3rem 2rem;
+            border-bottom: 1px solid var(--border-light);
         }
         
         .trust-content {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            text-align: center;
         }
         
         .trust-item {
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-align: center;
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            padding: 3rem 2rem;
-            border-radius: 20px;
-            transition: all 0.3s;
-            border: 2px solid transparent;
-        }
-        
-        .trust-item:hover {
-            transform: translateY(-5px);
-            border-color: #667eea;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
         }
         
         .trust-icon {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            filter: grayscale(0);
+            width: 56px;
+            height: 56px;
+            background: var(--light-blue);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
         }
         
         .trust-number {
-            font-size: 1.8rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.25rem;
         }
         
         .trust-label {
-            color: #6b7280;
-            font-size: 1.05rem;
-            font-weight: 500;
-            line-height: 1.6;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            line-height: 1.4;
         }
         
         .how-it-works {
-            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+            background: var(--neutral-gray);
             padding: 5rem 2rem;
-            margin-top: 0;
         }
         
         .how-it-works-content {
@@ -276,71 +283,69 @@
         
         .how-it-works h2 {
             text-align: center;
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: #1f2937;
-            margin-bottom: 1rem;
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.75rem;
         }
         
         .how-it-works .subtitle {
             text-align: center;
-            color: #6b7280;
-            font-size: 1.15rem;
+            color: var(--text-gray);
+            font-size: 1.1rem;
             margin-bottom: 4rem;
         }
         
         .steps-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
-            position: relative;
+            gap: 2rem;
         }
         
         .step-card {
             background: white;
-            padding: 3rem 2.5rem;
-            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            position: relative;
+            border: 1px solid var(--border-light);
             transition: all 0.3s;
         }
         
         .step-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.2);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transform: translateY(-4px);
         }
         
         .step-number {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            width: 48px;
+            height: 48px;
+            background: var(--primary-blue);
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
-            font-weight: 900;
+            font-size: 1.5rem;
+            font-weight: 700;
             margin: 0 auto 1.5rem;
         }
         
         .step-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .step-card h3 {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: #1f2937;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
         }
         
+        .step-card h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.75rem;
+        }
+        
         .step-card p {
-            color: #6b7280;
-            line-height: 1.7;
-            font-size: 1.05rem;
+            color: var(--text-gray);
+            line-height: 1.6;
+            font-size: 0.95rem;
         }
         
         .section {
@@ -350,34 +355,33 @@
         }
         
         .section h2 {
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: #1f2937;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.5px;
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            letter-spacing: -0.3px;
         }
         
         .section p {
-            color: #6b7280;
-            font-size: 1.15rem;
-            margin-bottom: 3rem;
-            line-height: 1.8;
+            color: var(--text-gray);
+            font-size: 1.05rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
         }
         
         .info-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 2.5rem;
+            gap: 2rem;
             margin-top: 3rem;
         }
         
         .info-card {
             background: white;
             padding: 2.5rem;
-            border-radius: 16px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
             transition: all 0.3s;
-            border: 1px solid #f3f4f6;
         }
         
         .info-card.full-width {
@@ -388,16 +392,16 @@
         }
         
         .info-card:hover {
-            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.15);
-            transform: translateY(-5px);
-            border-color: #667eea;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+            border-color: var(--primary-blue);
         }
         
         .info-card h3 {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: #1f2937;
-            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1.25rem;
         }
         
         .info-card ul {
@@ -406,41 +410,40 @@
         }
         
         .info-card li {
-            padding: 0.75rem 0;
-            padding-left: 2rem;
+            padding: 0.6rem 0;
+            padding-left: 1.75rem;
             position: relative;
-            color: #6b7280;
-            font-size: 1rem;
+            color: var(--text-gray);
+            font-size: 0.95rem;
         }
         
         .info-card li:before {
             content: "✓";
             position: absolute;
             left: 0;
-            color: #10b981;
+            color: var(--primary-green);
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
         
         .price-info {
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            border-left: 5px solid #667eea;
-            padding: 2.5rem;
-            border-radius: 16px;
+            background: var(--light-blue);
+            border-left: 4px solid var(--primary-blue);
+            padding: 2rem 2.5rem;
+            border-radius: 8px;
             margin: 3rem 0;
         }
         
         .price-info h3 {
-            font-size: 1.6rem;
-            color: #1f2937;
-            margin-bottom: 1.5rem;
-            font-weight: 800;
+            font-size: 1.35rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-weight: 600;
         }
         
         .faq {
-            background: #f9fafb;
+            background: white;
             padding: 5rem 2rem;
-            margin-top: 5rem;
         }
         
         .faq-content {
@@ -450,41 +453,42 @@
         
         .faq h2 {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2.25rem;
             margin-bottom: 4rem;
-            font-weight: 900;
-            color: #1f2937;
+            font-weight: 700;
+            color: var(--text-dark);
         }
         
         .faq-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
+            gap: 1.5rem;
         }
         
         .faq-item {
-            background: white;
-            border-radius: 12px;
+            background: var(--neutral-gray);
+            border-radius: 8px;
             padding: 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            transition: all 0.3s;
+            transition: all 0.2s;
+            border: 1px solid transparent;
         }
         
         .faq-item:hover {
-            box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+            border-color: var(--border-light);
+            background: white;
         }
         
         .faq-question {
-            font-weight: 800;
-            color: #1f2937;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1.05rem;
+            margin-bottom: 0.75rem;
         }
         
         .faq-answer {
-            color: #6b7280;
-            line-height: 1.8;
-            font-size: 1.05rem;
+            color: var(--text-gray);
+            line-height: 1.7;
+            font-size: 0.95rem;
         }
         
         footer {
@@ -588,17 +592,43 @@
     <div class="hero">
         <div class="hero-content">
             <div class="hero-text">
-                <h1>Jämför djurförsäkringar från flera bolag</h1>
-                <p>En oberoende jämförelsetjänst som hjälper dig hitta försäkring för hund, katt eller häst. Vi förmedlar kontakt med försäkringsbolag – du avgör själv.</p>
-                <a href="compare.html" class="cta-button">Jämför villkor och priser</a>
+                <span class="hero-label">✓ Oberoende jämförelse</span>
+                <h1>Jämför djurförsäkringar i Sverige – hitta rätt skydd för ditt djur</h1>
+                <p>Objektiv jämförelse av pris, täckning och villkor från Sveriges ledande försäkringsbolag. Enkelt, snabbt och helt kostnadsfritt.</p>
+                <div>
+                    <a href="compare.html" class="cta-button">Jämför nu</a>
+                    <a href="#hur-det-fungerar" class="cta-button-secondary">Se hur det fungerar</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">15 000+</span>
+                        <span class="hero-stat-label">Nöjda användare</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">3 000 kr</span>
+                        <span class="hero-stat-label">Genomsnittligt sparande/år</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">30 sek</span>
+                        <span class="hero-stat-label">Snabb jämförelse</span>
+                    </div>
+                </div>
             </div>
             <div class="hero-visual">
-                <div class="visual-circle">
-                    🐾
-                </div>
-                <div class="mini-card">🐕 Hund</div>
-                <div class="mini-card">🐈 Katt</div>
-                <div class="mini-card">🐴 Häst</div>
+                <svg width="500" height="400" viewBox="0 0 500 400" style="max-width: 100%; height: auto;">
+                    <circle cx="250" cy="200" r="120" fill="var(--light-blue)" opacity="0.3"/>
+                    <circle cx="250" cy="200" r="80" fill="var(--primary-blue)" opacity="0.1"/>
+                    <text x="250" y="210" text-anchor="middle" font-size="60" fill="var(--primary-blue)">�</text>
+                    <rect x="50" y="80" width="140" height="80" rx="12" fill="white" filter="url(#shadow)"/>
+                    <text x="120" y="125" text-anchor="middle" font-size="36">🐕</text>
+                    <rect x="310" y="80" width="140" height="80" rx="12" fill="white" filter="url(#shadow)"/>
+                    <text x="380" y="125" text-anchor="middle" font-size="36">🐈</text>
+                    <rect x="180" y="260" width="140" height="80" rx="12" fill="white" filter="url(#shadow)"/>
+                    <text x="250" y="305" text-anchor="middle" font-size="36">🐴</text>
+                    <defs>
+                        <filter id="shadow"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.1"/></filter>
+                    </defs>
+                </svg>
             </div>
         </div>
     </div>
@@ -606,27 +636,32 @@
     <div class="trust-bar">
         <div class="trust-content">
             <div class="trust-item">
-                <div class="trust-icon">🔍</div>
-                <div class="trust-number">Enkel jämförelse</div>
-                <div class="trust-label">Jämför villkor och priser från flera försäkringsbolag på ett ställe</div>
+                <div class="trust-icon">�️</div>
+                <div class="trust-number">Oberoende</div>
+                <div class="trust-label">Objektiv jämförelse utan dolda agendor</div>
             </div>
             <div class="trust-item">
-                <div class="trust-icon">💰</div>
-                <div class="trust-number">Spara pengar</div>
-                <div class="trust-label">Hitta bästa försäkringen för ditt djur och sänk dina kostnader</div>
+                <div class="trust-icon">⚡</div>
+                <div class="trust-number">Snabbt & enkelt</div>
+                <div class="trust-label">Jämför på 30 sekunder</div>
             </div>
             <div class="trust-item">
                 <div class="trust-icon">✓</div>
-                <div class="trust-number">Fullständig frihet</div>
-                <div class="trust-label">Du bestämmer själv vilket bolag du vill kontakta och teckna hos</div>
+                <div class="trust-number">Kostnadsfritt</div>
+                <div class="trust-label">Ingen kostnad att jämföra</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">🏆</div>
+                <div class="trust-number">Transparenta villkor</div>
+                <div class="trust-label">Tydliga jämförelser av pris & täckning</div>
             </div>
         </div>
     </div>
     
-    <div class="how-it-works">
+    <div class="how-it-works" id="hur-det-fungerar">
         <div class="how-it-works-content">
-            <h2>Så här fungerar det</h2>
-            <p class="subtitle">Hitta rätt försäkring för ditt djur på tre enkla steg</p>
+            <h2>Så fungerar vår jämförelsetjänst</h2>
+            <p class="subtitle">Tre enkla steg till rätt försäkring för ditt djur</p>
             
             <div class="steps-grid">
                 <div class="step-card">
