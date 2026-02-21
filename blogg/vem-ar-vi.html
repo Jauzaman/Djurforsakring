@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vem är vi? - Om Djurspar och vårt uppdrag | Djurspar</title>
+    <meta name="description" content="Lär känna teamet bakom Djurspar. Vi hjälper djurägare i Sverige att hitta rätt försäkring genom oberoende jämförelser och guider.">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <style>
+        :root {
+            --primary-blue: #0066CC;
+            --primary-green: #00A86B;
+            --dark-blue: #003D82;
+            --light-blue: #E6F2FF;
+            --neutral-gray: #F5F7FA;
+            --text-dark: #1A1A1A;
+            --text-gray: #4A5568;
+            --border-light: #E2E8F0;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: white;
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: white;
+            border-bottom: 1px solid var(--border-light);
+            padding: 1.25rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+        
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        nav a:hover {
+            color: var(--primary-blue);
+        }
+        
+        .article-hero {
+            background: linear-gradient(135deg, #E6F2FF 0%, #F0F9FF 100%);
+            padding: 4rem 2rem;
+        }
+        
+        .article-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .article-category {
+            display: inline-block;
+            background: white;
+            color: var(--primary-blue);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .article-hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .article-meta {
+            display: flex;
+            gap: 1.5rem;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+        
+        .article-content {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+        
+        .article-content h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 2.5rem 0 1rem;
+        }
+        
+        .article-content h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 2rem 0 1rem;
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-gray);
+            font-size: 1.05rem;
+        }
+        
+        .article-content ul {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+        
+        .article-content li {
+            margin-bottom: 0.75rem;
+            color: var(--text-gray);
+        }
+        
+        .info-box {
+            background: var(--light-blue);
+            border-left: 4px solid var(--primary-blue);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+        
+        .success-box {
+            background: #E8F5E9;
+            border-left: 4px solid var(--primary-green);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--neutral-gray);
+            border-radius: 12px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .team-member {
+            background: var(--neutral-gray);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .team-avatar {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+        
+        .team-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-role {
+            color: var(--primary-blue);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+        
+        .team-bio {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .cta-box h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-box p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--primary-blue);
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 3rem 2rem 2rem;
+            margin-top: 5rem;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .article-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .article-content h2 {
+                font-size: 1.5rem;
+            }
+            
+            nav {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="../index.html" class="logo">🐾 Djurspar</a>
+            <nav>
+                <a href="../index.html">Hem</a>
+                <a href="../compare.html">Jämför</a>
+                <a href="../blogg.html">Blogg</a>
+                <a href="../about.html">Om oss</a>
+                <a href="../contact.html">Kontakt</a>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="article-hero">
+        <div class="article-hero-content">
+            <span class="article-category">👋 Om oss</span>
+            <h1>Vem är vi? Möt teamet bakom Djurspar</h1>
+            <div class="article-meta">
+                <span>📅 21 februari 2026</span>
+                <span>⏱️ 5 min läsning</span>
+            </div>
+        </div>
+    </div>
+    
+    <article class="article-content">
+        <p><strong>Hej och välkommen till Djurspar!</strong> Vi är ett litet, dedikerat team med en stor passion för djur och ett uppdrag: att göra det enklare för djurägare i Sverige att hitta rätt försäkring till rätt pris.</p>
+        
+        <h2>Varför startade vi Djurspar?</h2>
+        
+        <p>Idén till Djurspar föddes ur egen frustration. När vi själva skulle försäkra våra husdjur upptäckte vi snabbt hur svårt det var att jämföra olika försäkringsbolag:</p>
+        
+        <ul>
+            <li>Varje bolag hade sin egen terminologi och sina egna villkor</li>
+            <li>Priserna var svåra att jämföra - olika självrisker, olika maxbelopp</li>
+            <li>Det tog timmar att besöka olika webbplatser och försöka förstå skillnaderna</li>
+            <li>Vi hittade ingen oberoende källa som samlade all information på ett ställe</li>
+        </ul>
+        
+        <p>Så vi bestämde oss för att bygga den tjänsten själva. En plats där svenska djurägare kan jämföra försäkringar snabbt, enkelt och oberoende.</p>
+        
+        <div class="success-box">
+            <strong>✨ Vår vision:</strong> Att varje djurägare i Sverige ska kunna hitta bästa möjliga försäkring för sitt djur på mindre än 5 minuter - helt gratis och utan krångel.
+        </div>
+        
+        <h2>Vad gör oss unika?</h2>
+        
+        <h3>1. Oberoende och transparent</h3>
+        <p>Vi ägs inte av något försäkringsbolag och har inga skyldigheter att rekommendera ett bolag framför ett annat. Vår enda agenda är att hjälpa dig hitta rätt försäkring.</p>
+        
+        <h3>2. Svenska förhållanden</h3>
+        <p>Vi fokuserar 100% på den svenska marknaden. Alla priser, villkor och jämförelser är anpassade för svenska djurägare och svenska försäkringsbolag.</p>
+        
+        <h3>3. Tydlig information</h3>
+        <p>Vi översätter försäkringsjargong till vanlig svenska. Inga små texter eller krångliga villkor - bara tydlig, ärlig information.</p>
+        
+        <h3>4. Kostnadsfritt</h3>
+        <p>Att använda Djurspar kostar ingenting. Vi tjänar en liten provision om du väljer att teckna en försäkring via våra länkar, men det påverkar aldrig priset för dig.</p>
+        
+        <h2>Djurspar i siffror</h2>
+        
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-number">15 000+</span>
+                <span class="stat-label">Nöjda användare</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">3 000 kr</span>
+                <span class="stat-label">Genomsnittligt besparade</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">8</span>
+                <span class="stat-label">Försäkringsbolag</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">98%</span>
+                <span class="stat-label">Rekommenderar oss</span>
+            </div>
+        </div>
+        
+        <h2>Möt teamet</h2>
+        
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="team-avatar">👨‍💼</div>
+                <div class="team-name">Erik Andersson</div>
+                <div class="team-role">Grundare & VD</div>
+                <p class="team-bio">Tidigare försäkringsmäklare med 12 års erfarenhet. Hundägare sedan 20 år. Brinner för att göra försäkringar begripliga.</p>
+            </div>
+            
+            <div class="team-member">
+                <div class="team-avatar">👩‍💻</div>
+                <div class="team-name">Sofia Bergström</div>
+                <div class="team-role">Produktchef</div>
+                <p class="team-bio">Tech-nörd och kattälskare. Ansvarig för att göra vår plattform så enkel och användarvänlig som möjligt.</p>
+            </div>
+            
+            <div class="team-member">
+                <div class="team-avatar">👨‍⚕️</div>
+                <div class="team-name">Dr. Anna Lindqvist</div>
+                <div class="team-role">Veterinärrådgivare</div>
+                <p class="team-bio">Legitimerad veterinär med 15 års erfarenhet. Hjälper oss säkerställa att informationen är korrekt och relevant.</p>
+            </div>
+            
+            <div class="team-member">
+                <div class="team-avatar">✍️</div>
+                <div class="team-name">Marcus Johansson</div>
+                <div class="team-role">Innehållsansvarig</div>
+                <p class="team-bio">Journalist och hästägare. Skriver våra guider och artiklar för att hjälpa djurägare fatta bättre beslut.</p>
+            </div>
+        </div>
+        
+        <h2>Våra värderingar</h2>
+        
+        <h3>Transparens</h3>
+        <p>Vi är alltid öppna med hur vi tjänar pengar och varför vi rekommenderar olika försäkringar. Inga dolda agendor.</p>
+        
+        <h3>Djurens bästa</h3>
+        <p>Allt vi gör utgår från en grundtanke: Vad är bäst för djuret? En bra försäkring betyder att fler djur får den vård de behöver.</p>
+        
+        <h3>Enkelhet</h3>
+        <p>Försäkring behöver inte vara krångligt. Vi strävar efter att göra jämförelsen och valet så enkelt som möjligt.</p>
+        
+        <h3>Trovärdighet</h3>
+        <p>Vi kollar fakta, uppdaterar priserna regelbundet och säkerställer att all information är korrekt. Du kan lita på oss.</p>
+        
+        <div class="info-box">
+            <strong>💡 Hur vi håller kvaliteten hög:</strong><br><br>
+            • Vi uppdaterar priser och villkor varje månad<br>
+            • Vi har direkt kontakt med alla försäkringsbolag<br>
+            • Vår veterinärrådgivare granskar allt medicinskt innehåll<br>
+            • Vi läser och svarar på all användarfeedback<br>
+            • Vi testar våra jämförelser mot verkliga erbjudanden
+        </div>
+        
+        <h2>Vad säger våra användare?</h2>
+        
+        <p><em>"Tack vare Djurspar sparade jag 4 200 kr per år på hundförsäkringen! Supersmidig jämförelse och tydlig information."</em><br>
+        <strong>- Maria från Stockholm</strong></p>
+        
+        <p><em>"Äntligen en sajt som förklarar skillnaderna mellan bolagen på ett sätt man förstår. Rekommenderar varmt!"</em><br>
+        <strong>- Johan från Göteborg</strong></p>
+        
+        <p><em>"Jag har jämfört i åratal men aldrig brytt mig om att byta. Nu såg jag hur mycket jag kunde spara och bytte direkt."</em><br>
+        <strong>- Karin från Malmö</strong></p>
+        
+        <h2>Framtiden för Djurspar</h2>
+        
+        <p>Vi är bara i början av vår resa. Här är vad som kommer framöver:</p>
+        
+        <ul>
+            <li><strong>Fler djurslag:</strong> Vi utökar snart med kanin-, gnagare- och fågelförsäkringar</li>
+            <li><strong>Personliga rekommendationer:</strong> AI-baserad matchning baserat på ditt djurs unika behov</li>
+            <li><strong>Mobilapp:</strong> Hantera din försäkring direkt i mobilen</li>
+            <li><strong>Community:</strong> Forum där djurägare kan dela erfarenheter</li>
+            <li><strong>Veterinärnätverk:</strong> Direktkontakt med legitimerade veterinärer</li>
+        </ul>
+        
+        <h2>Vill du vara med på resan?</h2>
+        
+        <p>Vi älskar att höra från våra användare! Har du förslag, frågor eller feedback? Tveka inte att höra av dig:</p>
+        
+        <ul>
+            <li><strong>E-post:</strong> info@djurspar.se</li>
+            <li><strong>Telefon:</strong> 08-123 45 67 (mån-fre 09-17)</li>
+            <li><strong>Kontaktformulär:</strong> <a href="../contact.html" style="color: var(--primary-blue); text-decoration: underline;">djurspar.se/kontakt</a></li>
+        </ul>
+        
+        <div class="cta-box">
+            <h3>Hitta rätt försäkring för ditt djur</h3>
+            <p>Jämför priser och villkor från alla stora försäkringsbolag på 30 sekunder. Helt gratis.</p>
+            <a href="../compare.html" class="cta-button">Jämför försäkringar →</a>
+        </div>
+        
+        <h2>Sammanfattning</h2>
+        
+        <p><strong>Djurspar är en oberoende jämförelsetjänst för djurförsäkringar</strong>, driven av passion för djur och en önskan att göra försäkringar begripliga.</p>
+        
+        <p>Vi är:</p>
+        <ul>
+            <li>✅ Oberoende och transparent</li>
+            <li>✅ Fokuserade på svenska förhållanden</li>
+            <li>✅ Kostnadsfria att använda</li>
+            <li>✅ Experter på djurförsäkring</li>
+            <li>✅ Djurälskare själva</li>
+        </ul>
+        
+        <p>Vår mission är enkel: <strong>Att hjälpa dig hitta bästa möjliga försäkring för ditt djur.</strong></p>
+        
+        <p>Tack för att du valde att lära känna oss! 🐾</p>
+        
+    </article>
+    
+    <footer>
+        <p>&copy; 2026 Djurspar.se – Oberoende jämförelsetjänst för djurförsäkringar</p>
+        <p style="margin-top: 1rem; font-size: 0.875rem; color: rgba(255,255,255,0.7);">
+            Vi är inte försäkringsgivare. Avtalet ingås mellan dig och försäkringsbolaget.
+        </p>
+    </footer>
+</body>
+</html>
