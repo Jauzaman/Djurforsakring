@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogg - Allt om Djurförsäkring | Djurspar</title>
+    <meta name="description" content="Läs våra guider och artiklar om djurförsäkring. Tips, råd och jämförelser för hund-, katt- och hästförsäkring.">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <style>
+        :root {
+            --primary-blue: #0066CC;
+            --primary-green: #00A86B;
+            --dark-blue: #003D82;
+            --light-blue: #E6F2FF;
+            --neutral-gray: #F5F7FA;
+            --text-dark: #1A1A1A;
+            --text-gray: #4A5568;
+            --border-light: #E2E8F0;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: white;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: white;
+            border-bottom: 1px solid var(--border-light);
+            padding: 1.25rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+        
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        nav a:hover {
+            color: var(--primary-blue);
+        }
+        
+        .blog-hero {
+            background: linear-gradient(135deg, #E6F2FF 0%, #F0F9FF 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .blog-hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+        
+        .blog-hero p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .blog-container {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .blog-card {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .blog-card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transform: translateY(-4px);
+            border-color: var(--primary-blue);
+        }
+        
+        .blog-card-category {
+            padding: 0.5rem 1rem;
+            background: var(--light-blue);
+            color: var(--primary-blue);
+            font-size: 0.875rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+        
+        .blog-card-content {
+            padding: 2rem;
+        }
+        
+        .blog-card h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+        
+        .blog-card p {
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .blog-card-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.875rem;
+            color: var(--text-gray);
+        }
+        
+        .read-more {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+        
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 3rem 2rem 2rem;
+            margin-top: 5rem;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .blog-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            nav {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">🐾 Djurspar</a>
+            <nav>
+                <a href="index.html">Hem</a>
+                <a href="compare.html">Jämför</a>
+                <a href="blogg.html">Blogg</a>
+                <a href="about.html">Om oss</a>
+                <a href="contact.html">Kontakt</a>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="blog-hero">
+        <h1>Blogg om Djurförsäkring</h1>
+        <p>Guider, tips och råd för att hjälpa dig välja rätt försäkring för ditt husdjur</p>
+    </div>
+    
+    <div class="blog-container">
+        <div class="blog-grid">
+            <a href="blogg/hundforsakring-guide-2026.html" class="blog-card">
+                <div class="blog-card-category">🐕 Hundförsäkring</div>
+                <div class="blog-card-content">
+                    <h2>Hundförsäkring Guide 2026 - Allt Du Behöver Veta</h2>
+                    <p>Komplett guide om hundförsäkring: vad som ingår, hur mycket det kostar, och hur du väljer rätt försäkring för din hund.</p>
+                    <div class="blog-card-meta">
+                        <span>📅 21 feb 2026</span>
+                        <span>⏱️ 8 min läsning</span>
+                    </div>
+                    <span class="read-more">Läs mer →</span>
+                </div>
+            </a>
+            
+            <a href="blogg/billigaste-hundforsakringen.html" class="blog-card">
+                <div class="blog-card-category">💰 Spara pengar</div>
+                <div class="blog-card-content">
+                    <h2>Billigaste Hundförsäkringen - Så Sparar Du Pengar</h2>
+                    <p>Jämförelse av priser mellan olika hundförsäkringar. Se konkreta exempel och lär dig hur du kan spara tusentals kronor årligen.</p>
+                    <div class="blog-card-meta">
+                        <span>📅 21 feb 2026</span>
+                        <span>⏱️ 6 min läsning</span>
+                    </div>
+                    <span class="read-more">Läs mer →</span>
+                </div>
+            </a>
+            
+            <a href="blogg/kattforsakring-prisguide.html" class="blog-card">
+                <div class="blog-card-category">🐈 Kattförsäkring</div>
+                <div class="blog-card-content">
+                    <h2>Kattförsäkring - Komplett Prisguide 2026</h2>
+                    <p>Vad kostar kattförsäkring? Prisexempel efter ålder, täckning och självrisk. Komplett guide för att hitta rätt försäkring.</p>
+                    <div class="blog-card-meta">
+                        <span>📅 21 feb 2026</span>
+                        <span>⏱️ 7 min läsning</span>
+                    </div>
+                    <span class="read-more">Läs mer →</span>
+                </div>
+            </a>
+            
+            <a href="blogg/valpforsakring-guide.html" class="blog-card">
+                <div class="blog-card-category">🐕 Hundförsäkring</div>
+                <div class="blog-card-content">
+                    <h2>Valpförsäkring - När och Hur Du Ska Teckna</h2>
+                    <p>Allt om försäkring för valpar: när du ska teckna, vad som ingår, och vilka bolag som har bäst villkor för unga hundar.</p>
+                    <div class="blog-card-meta">
+                        <span>📅 21 feb 2026</span>
+                        <span>⏱️ 5 min läsning</span>
+                    </div>
+                    <span class="read-more">Läs mer →</span>
+                </div>
+            </a>
+            
+            <a href="blogg/hastforsakring-pris.html" class="blog-card">
+                <div class="blog-card-category">🐴 Hästförsäkring</div>
+                <div class="blog-card-content">
+                    <h2>Hästförsäkring Pris - Detta Kostar Det 2026</h2>
+                    <p>Komplett översikt över priser för hästförsäkring. Vad påverkar kostnaden och hur kan du hitta bästa försäkringen?</p>
+                    <div class="blog-card-meta">
+                        <span>📅 21 feb 2026</span>
+                        <span>⏱️ 6 min läsning</span>
+                    </div>
+                    <span class="read-more">Läs mer →</span>
+                </div>
+            </a>
+            
+            <a href="blogg/aldre-hund-forsakring.html" class="blog-card">
+                <div class="blog-card-category">🐕 Hundförsäkring</div>
+                <div class="blog-card-content">
+                    <h2>Försäkring För Äldre Hund - Vad Du Måste Veta</h2>
+                    <p>Kan du försäkra en äldre hund? Vad kostar det och vilka begränsningar finns? Komplett guide för seniorhundar.</p>
+                    <div class="blog-card-meta">
+                        <span>📅 21 feb 2026</span>
+                        <span>⏱️ 5 min läsning</span>
+                    </div>
+                    <span class="read-more">Läs mer →</span>
+                </div>
+            </a>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2026 Djurspar.se – Oberoende jämförelsetjänst för djurförsäkringar</p>
+        <p style="margin-top: 1rem; font-size: 0.875rem; color: rgba(255,255,255,0.7);">
+            Vi är inte försäkringsgivare. Avtalet ingås mellan dig och försäkringsbolaget.
+        </p>
+    </footer>
+</body>
+</html>
