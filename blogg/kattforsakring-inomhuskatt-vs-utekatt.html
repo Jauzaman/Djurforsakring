@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kattförsäkring Inomhuskatt vs Utekatt - Pris & Täckning 2026 | Djurspar</title>
+    <meta name="description" content="Hur påverkas försäkringen om katten går ut? Jämför priser, risker och täckning för inomhuskatter och utekatter.">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <style>
+        :root {
+            --primary-blue: #0066CC;
+            --primary-green: #00A86B;
+            --dark-blue: #003D82;
+            --light-blue: #E6F2FF;
+            --neutral-gray: #F5F7FA;
+            --text-dark: #1A1A1A;
+            --text-gray: #4A5568;
+            --border-light: #E2E8F0;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: white;
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: white;
+            border-bottom: 1px solid var(--border-light);
+            padding: 1.25rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+        
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        nav a:hover {
+            color: var(--primary-blue);
+        }
+        
+        .article-hero {
+            background: linear-gradient(135deg, #F3E5F5 0%, #E1BEE7 100%);
+            padding: 4rem 2rem;
+        }
+        
+        .article-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .article-category {
+            display: inline-block;
+            background: white;
+            color: #7B1FA2;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .article-hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .article-meta {
+            display: flex;
+            gap: 1.5rem;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+        
+        .article-content {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+        
+        .article-content h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 2.5rem 0 1rem;
+        }
+        
+        .article-content h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 2rem 0 1rem;
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-gray);
+            font-size: 1.05rem;
+        }
+        
+        .article-content ul {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+        
+        .article-content li {
+            margin-bottom: 0.75rem;
+            color: var(--text-gray);
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .comparison-table th {
+            background: #7B1FA2;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background: var(--neutral-gray);
+        }
+        
+        .highlight-green {
+            background: #E8F5E9;
+            color: #2E7D32;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        .highlight-red {
+            background: #FFEBEE;
+            color: #C62828;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        .info-box {
+            background: var(--light-blue);
+            border-left: 4px solid var(--primary-blue);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+        
+        .warning-box {
+            background: #FFF3E0;
+            border-left: 4px solid #FF9800;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+        
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .cta-box h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .cta-box p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--primary-blue);
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 3rem 2rem 2rem;
+            margin-top: 5rem;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .article-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .article-content h2 {
+                font-size: 1.5rem;
+            }
+            
+            nav {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="../index.html" class="logo">🐾 Djurspar</a>
+            <nav>
+                <a href="../index.html">Hem</a>
+                <a href="../compare.html">Jämför</a>
+                <a href="../blogg.html">Blogg</a>
+                <a href="../about.html">Om oss</a>
+                <a href="../contact.html">Kontakt</a>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="article-hero">
+        <div class="article-hero-content">
+            <span class="article-category">🐱 Kattförsäkring</span>
+            <h1>Inomhuskatt vs Utekatt - Så Påverkas Försäkringen</h1>
+            <div class="article-meta">
+                <span>📅 22 februari 2026</span>
+                <span>⏱️ 8 min läsning</span>
+                <span>✍️ Djurspar</span>
+            </div>
+        </div>
+    </div>
+    
+    <article class="article-content">
+        <p><strong>Ska katten få gå ut eller inte?</strong> Det är en av de största frågorna för kattägare. Men visste du att det också påverkar försäkringen? I denna guide jämför vi försäkringskostnader, risker och täckning för inomhuskatter och utekatter.</p>
+        
+        <h2>Prisskillnad: Inomhuskatt vs Utekatt</h2>
+        
+        <p><strong>Överraskning:</strong> De flesta svenska försäkringsbolag tar INTE extra betalt för utekatter!</p>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Försäkringsbolag</th>
+                    <th>Inomhuskatt</th>
+                    <th>Utekatt</th>
+                    <th>Skillnad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Agria</strong></td>
+                    <td>220-280 kr/mån</td>
+                    <td>220-280 kr/mån</td>
+                    <td class="highlight-green">0 kr</td>
+                </tr>
+                <tr>
+                    <td><strong>If</strong></td>
+                    <td>210-270 kr/mån</td>
+                    <td>210-270 kr/mån</td>
+                    <td class="highlight-green">0 kr</td>
+                </tr>
+                <tr>
+                    <td><strong>Folksam</strong></td>
+                    <td>200-260 kr/mån</td>
+                    <td>200-260 kr/mån</td>
+                    <td class="highlight-green">0 kr</td>
+                </tr>
+                <tr>
+                    <td><strong>Trygg-Hansa</strong></td>
+                    <td>190-250 kr/mån</td>
+                    <td>190-250 kr/mån</td>
+                    <td class="highlight-green">0 kr</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <p><em>Priser för huskatt 2 år, 2 500 kr självrisk, 40 000 kr/år täckning.</em></p>
+        
+        <div class="info-box">
+            <strong>💡 Varför ingen prisskillnad?</strong> Svenska försäkringsbolag fokuserar mer på ålder och ras än på om katten går ut. Men risken för skador ÄR högre för utekatter - vilket syns i statistiken!
+        </div>
+        
+        <h2>Statistik: Vad Händer Oftare?</h2>
+        
+        <h3>Vanligaste Skador - Inomhuskatt:</h3>
+        <ul>
+            <li><strong>Urinvägsproblem</strong> - 35% av försäkringsfall (ofta från inaktivitet/övervikt)</li>
+            <li><strong>Tandproblem</strong> - 18% (från dålig kosthållning)</li>
+            <li><strong>Övervikt-relaterade problem</strong> - 15%</li>
+            <li><strong>Njurproblem</strong> - 12%</li>
+            <li><strong>Diabetes</strong> - 10%</li>
+        </ul>
+        
+        <p><strong>Genomsnittlig årlig veterinärkostnad:</strong> 3 500 kr</p>
+        
+        <h3>Vanligaste Skador - Utekatt:</h3>
+        <ul>
+            <li><strong>Trafikolyckor</strong> - 28% av försäkringsfall</li>
+            <li><strong>Kattbett/slagsmål</strong> - 24%</li>
+            <li><strong>Försvunna katter</strong> - 18%</li>
+            <li><strong>Parasiter/infektioner</strong> - 15%</li>
+            <li><strong>Förgiftning</strong> - 8%</li>
+        </ul>
+        
+        <p><strong>Genomsnittlig årlig veterinärkostnad:</strong> 4 800 kr</p>
+        
+        <div class="warning-box">
+            <strong>⚠️ Fakta:</strong> Utekatter besöker veterinären 40% oftare än inomhuskatter, och kostnaderna per besök är i genomsnitt 35% högre (mer akut vård, operationer).
+        </div>
+        
+        <h2>Typiska Kostnader Per Skadetype</h2>
+        
+        <h3>Inomhuskatt - Vanliga Kostnader</h3>
+        
+        <p><strong>1. Urinvägsinflammation/Blockering:</strong></p>
+        <ul>
+            <li>Enkel behandling: 1 500-3 000 kr</li>
+            <li>Akut blockering (katastrofall): 8 000-15 000 kr</li>
+            <li>Återkommande problem: 3 000-6 000 kr/år</li>
+        </ul>
+        
+        <p><strong>2. Tandproblem:</strong></p>
+        <ul>
+            <li>Tandsten borttagning: 3 000-5 000 kr (täcks sällan)</li>
+            <li>Tandextraktion: 4 000-8 000 kr (täcks vid sjukdom)</li>
+        </ul>
+        
+        <p><strong>3. Övervikt/Diabetes:</strong></p>
+        <ul>
+            <li>Diabetes-behandling: 2 000-4 000 kr/år (livslång)</li>
+            <li>Viktminskning-program: 1 500-3 000 kr</li>
+        </ul>
+        
+        <h3>Utekatt - Vanliga Kostnader</h3>
+        
+        <p><strong>1. Trafikolycka:</strong></p>
+        <ul>
+            <li>Lätt skada: 3 000-8 000 kr</li>
+            <li>Fraktur/benbrott: 12 000-25 000 kr</li>
+            <li>Allvarlig olycka: 25 000-60 000 kr</li>
+            <li><strong>Värst fall:</strong> Livförsäkring utbetalas (10 000-15 000 kr)</li>
+        </ul>
+        
+        <p><strong>2. Kattbett/Infektion:</strong></p>
+        <ul>
+            <li>Enkel sårvård: 1 200-2 500 kr</li>
+            <li>Abscess/infektion: 2 500-5 000 kr</li>
+            <li>Allvarlig infektion: 5 000-12 000 kr</li>
+        </ul>
+        
+        <p><strong>3. Försvunnen Katt:</strong></p>
+        <ul>
+            <li>Sökannons: 500-2 000 kr (täcks av vissa bolag)</li>
+            <li>Belöning: Betalar du själv</li>
+            <li>Livförsäkring: Utbetalas efter 30 dagar (vissa bolag)</li>
+        </ul>
+        
+        <h2>Försäkringsvillkor som Påverkas</h2>
+        
+        <h3>Ansvarsförsäkring</h3>
+        
+        <p><strong>Inomhuskatt:</strong></p>
+        <ul>
+            <li>Täcker skador katten gör i hemmet (ex: grannens lägenhet)</li>
+            <li>Lägre risk = sällan använd</li>
+        </ul>
+        
+        <p><strong>Utekatt:</strong></p>
+        <ul>
+            <li>Täcker trafikolyckor om katten orsakar bilolycka</li>
+            <li>Täcker skador på grannars egendom</li>
+            <li>Högre risk = viktigt skydd</li>
+        </ul>
+        
+        <h3>Livförsäkring</h3>
+        
+        <p><strong>Inomhuskatt:</strong></p>
+        <ul>
+            <li>Dödsfall ofta från sjukdom i hög ålder</li>
+            <li>Sällan aktuell före 10+ år</li>
+        </ul>
+        
+        <p><strong>Utekatt:</strong></p>
+        <ul>
+            <li>Risk för trafikolycka/förgiftning även som ung</li>
+            <li>30% av utekatter dör före 5 års ålder</li>
+            <li><strong>Viktigt:</strong> Välj minst 12 000 kr i livförsäkring</li>
+        </ul>
+        
+        <h2>Vad Händer Om Du Byter?</h2>
+        
+        <h3>Från Inomhuskatt till Utekatt</h3>
+        
+        <p><strong>Måste du informera försäkringsbolaget?</strong></p>
+        <p>Tekniskt sett nej i Sverige (ingen prisändring), men det är STARKT rekommenderat att:</p>
+        
+        <ul>
+            <li>Meddela bolaget om förändringen</li>
+            <li>Kolla om täckningen är tillräcklig</li>
+            <li>Överväg lägre självrisk (fler skador förväntas)</li>
+            <li>Se till att ID-märkning är uppdaterad</li>
+        </ul>
+        
+        <div class="info-box">
+            <strong>💡 Smart tips:</strong> Om du planerar att börja släppa ut katten, sänk självrisken INNAN katten går ut första gången. Kostar bara 30-50 kr/mån extra men sparar dig 1 000+ kr vid första olyckan!
+        </div>
+        
+        <h3>Från Utekatt till Inomhuskatt</h3>
+        
+        <p>Om du bestämmer dig för att börja hålla katten inne:</p>
+        
+        <ul>
+            <li>Informera bolaget (ingen prisändring)</li>
+            <li>Överväg höja självrisk för att spara pengar</li>
+            <li>Fokusera på förebyggande vård (övervikt, urinvägsproblem)</li>
+        </ul>
+        
+        <div class="cta-box">
+            <h3>Jämför försäkringar för din katt</h3>
+            <p>Oavsett om katten går ut eller inte - hitta bästa försäkringen.</p>
+            <a href="../compare.html" class="cta-button">Jämför priser →</a>
+        </div>
+        
+        <h2>Rekommendationer Per Typ</h2>
+        
+        <h3>För Inomhuskatt:</h3>
+        
+        <p><strong>Rekommenderad försäkring:</strong></p>
+        <ul>
+            <li><strong>Täckning:</strong> 30 000-40 000 kr/år (lägre risk för dyra olyckor)</li>
+            <li><strong>Självrisk:</strong> 2 500-5 000 kr (färre veterinärbesök)</li>
+            <li><strong>Livförsäkring:</strong> 10 000 kr (standard räcker)</li>
+            <li><strong>Extra fokus:</strong> Täckning för kroniska sjukdomar (urinvägar, diabetes)</li>
+        </ul>
+        
+        <p><strong>Månadskostnad:</strong> 180-250 kr/mån</p>
+        <p><strong>Förväntat antal veterinärbesök/år:</strong> 0-1</p>
+        
+        <h3>För Utekatt:</h3>
+        
+        <p><strong>Rekommenderad försäkring:</strong></p>
+        <ul>
+            <li><strong>Täckning:</strong> 50 000+ kr/år (högre risk för dyra operationer)</li>
+            <li><strong>Självrisk:</strong> 1 200-2 500 kr (fler veterinärbesök förväntas)</li>
+            <li><strong>Livförsäkring:</strong> 12 000-15 000 kr (högre risk)</li>
+            <li><strong>Ansvarsförsäkring:</strong> Minst 1 miljon kr (trafikolyckor)</li>
+        </ul>
+        
+        <p><strong>Månadskostnad:</strong> 220-320 kr/mån</p>
+        <p><strong>Förväntat antal veterinärbesök/år:</strong> 1-2</p>
+        
+        <h2>5-Årsberäkning: Vad Kostar Det Totalt?</h2>
+        
+        <h3>Inomhuskatt (frisk katt, 1 veterinärbesök på 5 år)</h3>
+        
+        <p><strong>Försäkring:</strong> 200 kr/mån × 60 mån = 12 000 kr</p>
+        <p><strong>Veterinärkostnader:</strong> 2 000 kr totalt (1 besök)</p>
+        <p><strong>Självrisk:</strong> 2 500 kr</p>
+        <p><strong>Ersättning:</strong> 0 kr (under självrisken)</p>
+        <p><strong>Total kostnad:</strong> 14 500 kr</p>
+        
+        <h3>Utekatt (2 trafikolyckor på 5 år)</h3>
+        
+        <p><strong>Försäkring:</strong> 250 kr/mån × 60 mån = 15 000 kr</p>
+        <p><strong>Veterinärkostnader:</strong> 35 000 kr totalt (2 olyckor à 8 000 + 27 000 kr)</p>
+        <p><strong>Självrisk:</strong> 2 × 2 500 kr = 5 000 kr</p>
+        <p><strong>Ersättning:</strong> 30 000 kr</p>
+        <p><strong>Total kostnad:</strong> 20 000 kr (15 000 + 5 000, resten täckt)</p>
+        <p><strong>UTAN försäkring:</strong> 35 000 kr (betalar allt själv)</p>
+        <p><strong>Försäkringen sparade:</strong> 15 000 kr</p>
+        
+        <div class="warning-box">
+            <strong>💡 Slutsats:</strong> För utekatter är försäkring nästan alltid lönsam. För inomhuskatter kan det vara break-even - men ger trygghet vid oväntade problem!
+        </div>
+        
+        <h2>Förebyggande Åtgärder</h2>
+        
+        <h3>För Inomhuskatt:</h3>
+        <ul>
+            <li>✓ Håll kattens vikt i kontroll (förhindra diabetes/ledproblem)</li>
+            <li>✓ Tillhandahåll flera vattenskålar (förhindra urinvägsproblem)</li>
+            <li>✓ Aktivera katten dagligen (klätterstegar, leksaker)</li>
+            <li>✓ Regelbunden tandvård (borsta tänder)</li>
+            <li>✓ Kvalitetsmat (förhindrar många problem)</li>
+        </ul>
+        
+        <h3>För Utekatt:</h3>
+        <ul>
+            <li>✓ ID-märk katten (chip + halsband med telefonnummer)</li>
+            <li>✓ Kastrera/sterilisera (minskar slagsmål, strövar mindre)</li>
+            <li>✓ Reflextillägg på halsbandet</li>
+            <li>✓ Håll inne under natten (flest olyckor 22-06)</li>
+            <li>✓ GPS-halsband (hitta katten om den försvinner)</li>
+            <li>✓ Regelbundna vaccin (FIV, FeLV om många katter i området)</li>
+        </ul>
+        
+        <h2>Vanliga Frågor</h2>
+        
+        <h3>Måste jag berätta att katten går ut?</h3>
+        <p>I Sverige krävs det inte (ingen prisändring), men rekommenderat för att säkerställa rätt täckning.</p>
+        
+        <h3>Kan jag få billigare försäkring för inomhuskatt?</h3>
+        <p>Nej, svenska bolag differentierar inte pris. MEN du kan välja högre självrisk och spara 30-50 kr/mån.</p>
+        
+        <h3>Täcks trafikolyckor för utekatt?</h3>
+        <p>Ja, fullt ut! Det är en av de vanligaste ersättningarna för utekatter.</p>
+        
+        <h3>Vad händer om katten försvinner?</h3>
+        <ul>
+            <li>Vissa bolag betalar livförsäkring efter 30 dagar</li>
+            <li>Vissa täcker sökannonsering (500-2 000 kr)</li>
+            <li>GPS-halsband täcks sällan av försäkring</li>
+        </ul>
+        
+        <h2>Sammanfattning</h2>
+        
+        <ul>
+            <li>✓ Ingen prisskillnad mellan inom- och utekatter i Sverige</li>
+            <li>✓ Utekatter har 40% fler veterinärbesök</li>
+            <li>✓ Trafikolyckor är vanligaste skadan för utekatter (28%)</li>
+            <li>✓ Urinvägsproblem vanligast för inomhuskatter (35%)</li>
+            <li>✓ Rekommendation utekatt: 50 000+ kr täckning, 1200-2500 kr självrisk</li>
+            <li>✓ Rekommendation inomhuskatt: 30 000-40 000 kr täckning, 2500-5000 kr självrisk</li>
+            <li>✓ Försäkring nästan alltid lönsam för utekatter</li>
+            <li>✓ Försäkring ger trygghet för inomhuskatter (break-even ekonomiskt)</li>
+        </ul>
+        
+        <p><strong>Viktigaste tipset:</strong> Oavsett om katten går ut eller inte - teckna försäkring! Men anpassa täckning och självrisk efter kattens livsstil.</p>
+        
+    </article>
+    
+    <footer>
+        <p>&copy; 2026 Djurspar.se – Oberoende jämförelsetjänst för djurförsäkringar</p>
+        <p style="margin-top: 1rem; font-size: 0.875rem; color: rgba(255,255,255,0.7);">
+            Vi är inte försäkringsgivare. Avtalet ingås mellan dig och försäkringsbolaget.
+        </p>
+    </footer>
+</body>
+</html>

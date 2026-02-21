@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopterad Hund Försäkring - Guide 2026 | Djurspar</title>
+    <meta name="description" content="Hur försäkrar man adopterad hund? Allt om försäkring för räddade hundar, vuxna hundar utan historik och utlandadoptioner.">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <style>
+        :root {
+            --primary-blue: #0066CC;
+            --primary-green: #00A86B;
+            --dark-blue: #003D82;
+            --light-blue: #E6F2FF;
+            --neutral-gray: #F5F7FA;
+            --text-dark: #1A1A1A;
+            --text-gray: #4A5568;
+            --border-light: #E2E8F0;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: white;
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: white;
+            border-bottom: 1px solid var(--border-light);
+            padding: 1.25rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+        
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        nav a:hover {
+            color: var(--primary-blue);
+        }
+        
+        .article-hero {
+            background: linear-gradient(135deg, #FFF9C4 0%, #FFF59D 100%);
+            padding: 4rem 2rem;
+        }
+        
+        .article-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .article-category {
+            display: inline-block;
+            background: white;
+            color: #F57C00;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .article-hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .article-meta {
+            display: flex;
+            gap: 1.5rem;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+        
+        .article-content {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+        
+        .article-content h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 2.5rem 0 1rem;
+        }
+        
+        .article-content h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 2rem 0 1rem;
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-gray);
+            font-size: 1.05rem;
+        }
+        
+        .article-content ul {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+        
+        .article-content li {
+            margin-bottom: 0.75rem;
+            color: var(--text-gray);
+        }
+        
+        .warning-box {
+            background: #FFF3E0;
+            border-left: 4px solid #FF9800;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+        
+        .success-box {
+            background: #E8F5E9;
+            border-left: 4px solid #4CAF50;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+        
+        .info-box {
+            background: var(--light-blue);
+            border-left: 4px solid var(--primary-blue);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+        
+        .checklist {
+            background: #F9F9F9;
+            border: 2px solid #E0E0E0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .checklist h4 {
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+        
+        .checklist ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .checklist li:before {
+            content: "✓ ";
+            color: var(--primary-green);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .cta-box h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .cta-box p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--primary-blue);
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 3rem 2rem 2rem;
+            margin-top: 5rem;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .article-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .article-content h2 {
+                font-size: 1.5rem;
+            }
+            
+            nav {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="../index.html" class="logo">🐾 Djurspar</a>
+            <nav>
+                <a href="../index.html">Hem</a>
+                <a href="../compare.html">Jämför</a>
+                <a href="../blogg.html">Blogg</a>
+                <a href="../about.html">Om oss</a>
+                <a href="../contact.html">Kontakt</a>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="article-hero">
+        <div class="article-hero-content">
+            <span class="article-category">❤️ Adoption</span>
+            <h1>Försäkring för Adopterad Hund - Komplett Guide</h1>
+            <div class="article-meta">
+                <span>📅 22 februari 2026</span>
+                <span>⏱️ 9 min läsning</span>
+                <span>✍️ Djurspar</span>
+            </div>
+        </div>
+    </div>
+    
+    <article class="article-content">
+        <p><strong>Grattis till din nya familjemedlem!</strong> Att adoptera en hund är fantastiskt - men försäkringen kan vara lite knepigare än för valpar från uppfödare. I denna guide får du allt du behöver veta om att försäkra adopterade hundar.</p>
+        
+        <h2>Utmaningen Med Adopterade Hundar</h2>
+        
+        <p>Varför är adopterade hundar svårare att försäkra?</p>
+        
+        <ul>
+            <li><strong>Okänd historik</strong> - Du vet inte vad hunden varit med om</li>
+            <li><strong>Okända sjukdomar</strong> - Befintliga problem kan dyka upp senare</li>
+            <li><strong>Okänd ålder</strong> - Ofta uppskattas åldern</li>
+            <li><strong>Okänd ras</strong> - Blandraser eller okänd bakgrund</li>
+            <li><strong>Beteendeproblem</strong> - Tidigare trauma kan ge framtida problem</li>
+        </ul>
+        
+        <div class="warning-box">
+            <strong>⚠️ Viktigt:</strong> Alla sjukdomar som fanns INNAN du tecknar försäkringen täcks ALDRIG - även om du inte kände till dem när du adopterade hunden.
+        </div>
+        
+        <h2>När Bör Du Teckna Försäkringen?</h2>
+        
+        <p><strong>Svaret: Så snart som möjligt - helst samma dag du hämtar hunden!</strong></p>
+        
+        <h3>Varför omedelbart?</h3>
+        
+        <ul>
+            <li>Allt som händer från dag 1 täcks</li>
+            <li>Om hunden blir sjuk vecka 2 och du väntat med försäkring = INTE täckt</li>
+            <li>Om hunden springer in i en bil dag 3 = täckt om du har försäkring</li>
+            <li>Karenstiden börjar räknas direkt</li>
+        </ul>
+        
+        <div class="success-box">
+            <strong>💡 Tips från veterinär:</strong> "De flesta adopterade hundar jag ser utvecklar problem inom de första 3 månaderna. Teckna försäkring INNAN första veterinärbesöket!"
+        </div>
+        
+        <h2>Vad Händer Vid Första Veterinärbesöket?</h2>
+        
+        <p>De flesta shelters/rescueorganisationer rekommenderar ett veterinärbesök inom första veckan.</p>
+        
+        <h3>Problemet:</h3>
+        <p>Om veterinären upptäcker något vid första besöket och du INTE har försäkring än:</p>
+        <ul>
+            <li>❌ Det räknas som befintlig sjukdom</li>
+            <li>❌ Täcks ALDRIG av försäkring</li>
+            <li>❌ Du betalar ALLA framtida kostnader själv</li>
+        </ul>
+        
+        <h3>Lösningen:</h3>
+        <p>Teckna försäkring INNAN första veterinärbesöket:</p>
+        <ul>
+            <li>✓ Allt som upptäcks täcks (efter karenstid)</li>
+            <li>✓ Du är trygg om något oväntat dyker upp</li>
+            <li>✓ Första besökets kostnad täcks ofta inte, men framtida behandling gör det</li>
+        </ul>
+        
+        <div class="checklist">
+            <h4>Checklista första veckan:</h4>
+            <ul>
+                <li>Dag 1: Teckna hundförsäkring</li>
+                <li>Dag 1-3: Boka veterinärtid</li>
+                <li>Dag 3-7: Första veterinärbesöket</li>
+                <li>Dag 7: Registrera hund hos Jordbruksverket</li>
+            </ul>
+        </div>
+        
+        <h2>Vilka Bolag Försäkrar Adopterade Hundar?</h2>
+        
+        <p><strong>Goda nyheter: Alla stora bolag försäkrar adopterade hundar!</strong></p>
+        
+        <h3>Men villkoren varierar:</h3>
+        
+        <p><strong>Agria:</strong></p>
+        <ul>
+            <li>✓ Försäkrar adopterade hundar från dag 1</li>
+            <li>✓ Kräver veterinärintyg om åldern är osäker</li>
+            <li>✓ Normal karenstid gäller (6-12 mån för ärftligt)</li>
+            <li>✓ Bra villkor även för utlandsadoptioner</li>
+        </ul>
+        
+        <p><strong>Folksam:</strong></p>
+        <ul>
+            <li>✓ Försäkrar adopterade hundar</li>
+            <li>✓ Kan kräva hälsoundersökning för hundar över 7 år</li>
+            <li>✓ Flexibla villkor för blandraser</li>
+        </ul>
+        
+        <p><strong>If:</strong></p>
+        <ul>
+            <li>✓ Försäkrar adopterade hundar</li>
+            <li>✓ Enkel ansökningsprocess online</li>
+            <li>✓ Bra för yngre adopterade hundar (under 5 år)</li>
+        </ul>
+        
+        <p><strong>Trygg-Hansa:</strong></p>
+        <ul>
+            <li>✓ Försäkrar adopterade hundar</li>
+            <li>✓ Konkurrenskraftiga priser för blandraser</li>
+            <li>✓ Flexibla självriskalternativ</li>
+        </ul>
+        
+        <h2>Specialfall: Utlandsadoptioner</h2>
+        
+        <p>Har du adopterat hund från utlandet (Spanien, Grekland, Rumänien, etc.)?</p>
+        
+        <h3>Extra utmaningar:</h3>
+        <ul>
+            <li>Ofta okänd hälsostatus</li>
+            <li>Risk för sydländska sjukdomar (leishmaniasis, ehrlichios, etc.)</li>
+            <li>Längre resetid = stress som kan utlösa problem</li>
+        </ul>
+        
+        <h3>Försäkring för utlandsadoptioner:</h3>
+        
+        <div class="info-box">
+            <strong>Viktigt att veta:</strong><br><br>
+            <strong>Sydländska sjukdomar täcks INTE</strong> om hunden redan är smittad när försäkringen tecknas. Många av dessa sjukdomar har lång inkubationstid (veckor-månader).<br><br>
+            <strong>Lösning:</strong> Teckna försäkring INNAN hunden lämnar ursprungslandet om möjligt, eller samma dag den anländer Sverige.
+        </div>
+        
+        <h3>Rekommenderade åtgärder:</h3>
+        <ol>
+            <li>Teckna försäkring dagen hunden anländer Sverige</li>
+            <li>Veterinärundersökning inom 7 dagar</li>
+            <li>Testa för sydländska sjukdomar (kostnad: 2 000-3 000 kr)</li>
+            <li>Spara alla kvitton och journaler</li>
+        </ol>
+        
+        <h2>Vanliga Problem Med Adopterade Hundar</h2>
+        
+        <h3>1. Parasiter och Infektioner</h3>
+        <p><strong>Vanligt:</strong> Maskar, giardia, kennel cough</p>
+        <p><strong>Kostnad:</strong> 500-3 000 kr</p>
+        <p><strong>Täcks:</strong> Ja, om upptäckt efter försäkringen tecknats</p>
+        
+        <h3>2. Tandproblem</h3>
+        <p><strong>Vanligt:</strong> Många räddade hundar har dåliga tänder</p>
+        <p><strong>Kostnad:</strong> 5 000-15 000 kr</p>
+        <p><strong>Täcks:</strong> Sällan - tandvård täcks normalt inte (såvida inte från skada)</p>
+        
+        <h3>3. Hudproblem</h3>
+        <p><strong>Vanligt:</strong> Allergi, svamp, eksem</p>
+        <p><strong>Kostnad:</strong> 3 000-10 000 kr/år</p>
+        <p><strong>Täcks:</strong> Ja, om inte befintligt när försäkring tecknades</p>
+        
+        <h3>4. Beteendeproblem</h3>
+        <p><strong>Vanligt:</strong> Separation anxiety, aggression, rädsla</p>
+        <p><strong>Kostnad:</strong> 5 000-15 000 kr (beteendeterapi)</p>
+        <p><strong>Täcks:</strong> Endast med beteendetillägg (+25-40 kr/månad)</p>
+        
+        <h3>5. Tidigare Skador</h3>
+        <p><strong>Vanligt:</strong> Gamla frakturer, led problem från tidigare trauma</p>
+        <p><strong>Kostnad:</strong> Varierande</p>
+        <p><strong>Täcks:</strong> Nej, om de fanns innan försäkringen</p>
+        
+        <div class="warning-box">
+            <strong>⚠️ Realistiska förväntningar:</strong> Många adopterade hundar har problem som aldrig täcks av försäkring. Var beredd på 5 000-15 000 kr i initiala kostnader som du betalar själv.
+        </div>
+        
+        <h2>Hälsoundersökning - Behövs Det?</h2>
+        
+        <h3>När krävs hälsoundersökning?</h3>
+        <ul>
+            <li>Hund över 7-8 år (varierar per bolag)</li>
+            <li>Hund med okänd ålder som bedöms som äldre</li>
+            <li>Hund från utlandet (vissa bolag)</li>
+            <li>Hund med känd hälsohistoria</li>
+        </ul>
+        
+        <h3>Vad ingår i hälsoundersökning?</h3>
+        <ul>
+            <li>Allmän veterinärundersökning</li>
+            <li>Blodprover (ibland)</li>
+            <li>Bedömning av ålder</li>
+            <li>Dokumentation av befintliga problem</li>
+        </ul>
+        
+        <p><strong>Kostnad:</strong> 1 500-3 000 kr (betalar du själv)</p>
+        
+        <div class="success-box">
+            <strong>💡 Tips:</strong> Även om det inte krävs kan en hälsoundersökning vara smart. Då vet du exakt vad som är befintligt och vad som täcks!
+        </div>
+        
+        <h2>Pris för Försäkring - Adopterade vs Valp</h2>
+        
+        <p><strong>Adopterad blandras 2-3 år:</strong> 280-420 kr/månad</p>
+        <p><strong>Adopterad blandras 5-7 år:</strong> 380-550 kr/månad</p>
+        <p><strong>Adopterad blandras 8+ år:</strong> 550-850 kr/månad</p>
+        
+        <p><strong>Jämfört med valp från uppfödare:</strong> Ungefär samma pris, men adopterad hund har högre risk för befintliga problem.</p>
+        
+        <div class="cta-box">
+            <h3>Jämför försäkringar för din adopterade hund</h3>
+            <p>Få personliga erbjudanden baserat på ålder och ras.</p>
+            <a href="../compare.html" class="cta-button">Jämför priser →</a>
+        </div>
+        
+        <h2>Rekommenderade Tillägg för Adopterade Hundar</h2>
+        
+        <h3>1. Beteendetillägg (+25-40 kr/mån)</h3>
+        <p><strong>Täcker:</strong> 5 000-10 000 kr i beteendeterapi</p>
+        <p><strong>Värt det?</strong> Ja! Många adopterade hundar har beteendeproblem.</p>
+        
+        <h3>2. Högre årligt maxbelopp (+50-100 kr/mån)</h3>
+        <p><strong>Ökar från:</strong> 40 000 kr till 60 000+ kr/år</p>
+        <p><strong>Värt det?</strong> Ja, om hunden är äldre eller har okänd bakgrund.</p>
+        
+        <h3>3. Lägre självrisk (-30-80 kr/mån)</h3>
+        <p><strong>Sänker från:</strong> 2 500 kr till 1 200 kr eller 0 kr</p>
+        <p><strong>Värt det?</strong> Överväg om du förväntar dig många veterinärbesök första året.</p>
+        
+        <h2>Vanliga Frågor</h2>
+        
+        <h3>Kan jag försäkra en hund om jag inte vet rasen?</h3>
+        <p>Ja! Ange "blandras" och uppskatta storleken (liten/mellan/stor). Blandraser är ofta billigare att försäkra.</p>
+        
+        <h3>Vad händer om veterinären hittar problem vid första besöket?</h3>
+        <p>Om du tecknat försäkring INNAN besöket: Täcks efter karenstid. Om du tecknar EFTER: Räknas som befintlig sjukdom och täcks ALDRIG.</p>
+        
+        <h3>Kan jag byta försäkring senare?</h3>
+        <p>Ja, men alla problem som upptäckts med nuvarande försäkring räknas som befintliga hos nya bolaget. Byt därför bara om hunden är frisk!</p>
+        
+        <h3>Vad händer om åldern är fel?</h3>
+        <p>Om veterinären senare bedömer att hunden är äldre än angivet kan försäkringsbolaget justera premien. Viktigt att vara ärlig med uppskattad ålder!</p>
+        
+        <h3>Täcks vaccinationer för adopterad hund?</h3>
+        <p>Nej, vaccinationer täcks aldrig - vare sig hunden är adopterad eller valp.</p>
+        
+        <h2>Sammanfattning</h2>
+        
+        <div class="checklist">
+            <h4>Checklista för adopterad hund:</h4>
+            <ul>
+                <li>Teckna försäkring samma dag du hämtar hunden</li>
+                <li>Teckna INNAN första veterinärbesöket</li>
+                <li>Överväg beteendetillägg</li>
+                <li>Välj minst 40 000 kr/år i täckning</li>
+                <li>Spara alla kvitton och journaler</li>
+                <li>Var ärlig om ålder och kända problem</li>
+                <li>Testa för sydländska sjukdomar (utlandsadoption)</li>
+                <li>Räkna med 5 000-15 000 kr i egna kostnader första året</li>
+            </ul>
+        </div>
+        
+        <p><strong>Viktigaste tipset:</strong> Vänta INTE med försäkringen! Ju tidigare du tecknar, desto mer täcks. Idealt: Samma dag som du hämtar hunden!</p>
+        
+    </article>
+    
+    <footer>
+        <p>&copy; 2026 Djurspar.se – Oberoende jämförelsetjänst för djurförsäkringar</p>
+        <p style="margin-top: 1rem; font-size: 0.875rem; color: rgba(255,255,255,0.7);">
+            Vi är inte försäkringsgivare. Avtalet ingås mellan dig och försäkringsbolaget.
+        </p>
+    </footer>
+</body>
+</html>
